@@ -1,0 +1,44 @@
+html,
+body {
+    position: relative;
+
+    font-size: 14px;
+    font-weight: $fw-regular;
+    font-family: $ff-sans;
+    letter-spacing: 1px;
+
+    line-height: 1.3;
+
+    color: $c-black;
+    background: $c-white;
+    scroll-behavior: smooth;
+}
+
+
+a {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+        transition: $transition-default;
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+::selection {
+    background: $c-theme-color;
+}
+
+input {
+    &[type='button'] {
+        cursor: pointer;
+    }
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

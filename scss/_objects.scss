@@ -1,0 +1,79 @@
+/* Responsive
+----------------------------------------------- */
+@media only screen and (min-width: #{$breakpoint-m + 1px}) {
+    .sp-only {
+        display: none;
+    }
+}
+@media only screen and (max-width: $breakpoint-m) {
+    .pc-only {
+        display: none;
+    }
+}
+
+/* Text
+----------------------------------------------- */
+
+/* Media
+----------------------------------------------- */
+.embedded-contents {
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+
+    &.embedded-contents--thin {
+        padding-bottom: 40%;
+    }
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    @media only screen and (max-width: 768px) {
+        /* Undo */
+        padding-bottom: 0; //overwrite modifier classes
+        height: auto;
+
+        iframe {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+    }
+}
+
+/* Measurements
+----------------------------------------------- */
+
+/* Containers
+----------------------------------------------- */
+.padded-container {
+    padding: 80px 1rem;
+
+    @media only screen and (max-width: $breakpoint-m) {
+        padding: 40px 1rem;
+    }
+}
+
+/* Buttons
+----------------------------------------------- */
+
+/* Animations
+----------------------------------------------- */
+
+/* Graphics
+----------------------------------------------- */
+
+/* Icons
+----------------------------------------------- */
+
+/* Colours & Themes
+----------------------------------------------- */
+
+/* Misc
+----------------------------------------------- */

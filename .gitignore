@@ -1,0 +1,5 @@
+style.css
+style.css.map
+node_modules/
+.DS_store
+linters/sass-lint.html

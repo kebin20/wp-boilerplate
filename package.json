@@ -1,0 +1,29 @@
+{
+    "name": "gulp4_sass_browsersync",
+    "description": "Gulp 4 Sass BrowserSync Kickstart Example",
+    "author": {
+        "name": "Norman Kämper-Leymann",
+        "mail": "norman.leymann@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@gist.github.com:8f6a75e8ad5055276a71d2901813726e.git"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "autoprefixer": "^9.4.6",
+        "beeper": "^1.1.1",
+        "browser-sync": "^2.26.12",
+        "gulp": "^4.0.0",
+        "gulp-autoprefixer": "^6.1.0",
+        "gulp-cached": "^1.1.1",
+        "gulp-notify": "^3.2.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-sass": "^4.0.2",
+        "gulp-sass-lint": "^1.4.0",
+        "gulp-shell": "^0.6.5"
+    },
+    "scripts": {
+        "postinstall": "./node_modules/.bin/gulp build"
+    }
+}
