@@ -103,9 +103,8 @@
     display: inline-block;
     font-weight: $fontweight;
     font-family: $ff-fontawesome;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
+    -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
+    -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
