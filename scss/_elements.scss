@@ -1,8 +1,11 @@
-html,
+html {
+    font-size: 62.5%;
+}
+
 body {
     position: relative;
 
-    font-size: 14px;
+    font-size: $fs-body;
     font-weight: $fw-regular;
     font-family: $ff-sans;
     letter-spacing: 1px;
