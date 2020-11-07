@@ -71,7 +71,16 @@
 // Animations
 //----------------------------------------------- //
 
-@mixin shift-on-hover($offset: -8px) {
+@mixin shift-on-hover-x($offset: -3px) {
+    transition: $transition-default;
+    transform: translateX(0);
+
+    &:hover {
+        transform: translateX($offset);
+    }
+}
+
+@mixin shift-on-hover-y($offset: -3px) {
     transition: $transition-default;
     transform: translateY(0);
 

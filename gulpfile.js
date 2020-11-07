@@ -20,7 +20,7 @@ function buildStyles() {
     .pipe(plumbError()) // Global error handler through all pipes.
     //.pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'compressed' }))
-    .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7']))
+    .pipe(autoprefixer(['last 2 versions', '> 1%', 'ie 11']))
     //.pipe(sourcemaps.write())
     .pipe(dest('.'))
     .pipe(browsersync.reload({ stream: true }));
