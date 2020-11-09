@@ -99,11 +99,6 @@ function gutenbase_enqueue_assets() // Emoji に関するファイルを読み�
         wp_register_style('common-style', get_template_directory_uri() . '/style.css');
         wp_enqueue_style('common-style');
 
-        if (is_single()) {
-            wp_register_style('single-style', get_template_directory_uri() . '/style-wysiwyg.css');
-            wp_enqueue_style('single-style');
-        }
-
         //=== FONTAWESOME
         wp_register_style('font-awesome', get_template_directory_uri() . '/vendor/fontawesome/css/all.min.css');
         wp_enqueue_style('font-awesome');
