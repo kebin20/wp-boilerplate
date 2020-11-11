@@ -109,9 +109,6 @@ function gutenbase_enqueue_assets() // Emoji に関するファイルを読み�
         wp_enqueue_script('jquery-new');
 
         //=== SLICK
-        //Styles
-        wp_register_style('slick-style', get_template_directory_uri() . '/vendor/slick/slick.css');
-        wp_enqueue_style('slick-style');
         //Scripts
         wp_register_script('slick-script', get_template_directory_uri() . '/vendor/slick/slick.js', array(), false, true ); //load into footer
         wp_enqueue_script('slick-script');
