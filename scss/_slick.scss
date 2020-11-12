@@ -108,7 +108,7 @@
 
 /* Slider */
 .slick-loading .slick-list {
-    background: $c-white url('./ajax-loader.gif') center center no-repeat;
+    background: $c-white url('vendor/slick/ajax-loader.gif') center center no-repeat;
 }
 
 /* Icons */
@@ -117,7 +117,7 @@
     font-weight: normal;
     font-style: normal;
 
-    src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('./fonts/slick.woff') format('woff'), url('./fonts/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
+    src: url('vendor/slick/fonts/slick.eot?#iefix') format('embedded-opentype'), url('vendor/slick/fonts/slick.woff') format('woff'), url('vendor/slick/fonts/slick.ttf') format('truetype'), url('vendor/slick/fonts/slick.svg#slick') format('svg');
 }
 
 /* Arrows */
@@ -221,9 +221,11 @@
             outline: none;
             background: transparent;
 
+            &:active,
             &:hover,
             &:focus {
                 outline: none;
+                box-shadow: none;
 
                 &:before {
                     opacity: 1;
