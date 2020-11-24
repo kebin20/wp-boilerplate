@@ -18,6 +18,7 @@ rules:
   extends-before-declarations: 2
   force-element-nesting: 0
   force-pseudo-nesting: 0
+  function-name-format: 0
   leading-zero:
     - 1
     -
