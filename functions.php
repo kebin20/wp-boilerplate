@@ -90,11 +90,6 @@ remove_action('wp_head', 'print_emoji_detection_script', 7); // Emoji に関す�
 function gutenbase_enqueue_assets() // Emoji に関するファイルを読み込まないように
 {
     if (!is_admin()) {
-        //== REMOVE DEFAULT JQUERY
-        //Remove default JQuery and wp-embed　ー　古いjqueryのバージョンと、wp-embedを読み込まないように 
-        wp_deregister_script('jquery');
-        wp_deregister_script('wp-embed');
-
         //== CRITICAL CSS
         wp_register_style('common-style', get_template_directory_uri() . '/style.css');
         wp_enqueue_style('common-style');
@@ -102,11 +97,6 @@ function gutenbase_enqueue_assets() // Emoji に関するファイルを読み�
         //=== FONTAWESOME
         wp_register_style('font-awesome', get_template_directory_uri() . '/vendor/fontawesome/css/all.min.css');
         wp_enqueue_style('font-awesome');
-
-        //=== NEW JQUERY
-        //Needed for Slick, not needed for Swiper
-        wp_register_script('jquery-new', get_template_directory_uri() . '/vendor/jquery.min.js', array(), false, true ); //load into footer
-        wp_enqueue_script('jquery-new');
 
         //=== SLICK
         //Scripts
@@ -149,7 +139,6 @@ function add_attribute_to_script_tag($tag, $handle) {
     # add script handles to the array below
     $scripts_to_defer = array(
         'ofi-script',
-        'jquery-new',
         'slick-script',
         'init-script',
     );
