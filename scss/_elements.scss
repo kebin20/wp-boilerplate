@@ -10,13 +10,12 @@ body {
     font-family: $ff-sans;
     letter-spacing: 1px;
 
-    line-height: 1.3;
+    line-height: 1.6;
 
     color: $c-black;
     background: $c-white;
     scroll-behavior: smooth;
 }
-
 
 a {
     &,
@@ -39,7 +38,12 @@ input {
     }
 }
 
+em {
+    font-style: normal;
+}
+
 img,
+iframe,
 svg {
     display: block;
     max-width: 100%;

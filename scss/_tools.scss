@@ -19,17 +19,6 @@
     object-fit: contain;
     font-family: 'object-fit: contain;';
 }
-@mixin background-position-contain ($horizontal: center, $vertical: center) {
-    background-position: $horizontal $vertical;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-@mixin background-position-cover ($horizontal: center, $vertical: center) {
-    background-position: $horizontal $vertical;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 // Themes / Combos
 //----------------------------------------------- //
@@ -46,23 +35,9 @@
     height: 100%;
     top: 0;
     left: 0;
-    
+
     @if ($zindex) {
         z-index: $zindex;
-    }
-}
-@mixin container-fill-before-shadow ($opacity: 0.6, $zindex: -1) {
-    &:before {
-        content: '';
-        @include container-fill($zindex);
-        background: rgba($shadow-color, $opacity);
-    }
-}
-@mixin container-fill-after-shadow ($opacity: 0.6, $zindex: -1) {
-    &:after {
-        content: '';
-        @include container-fill($zindex);
-        background-color: rgba($shadow-color, $opacity);
     }
 }
 
@@ -71,7 +46,6 @@
 
 @mixin shift-on-hover-x($offset: -3px) {
     transition: $transition-default;
-    transform: translateX(0);
 
     &:hover {
         transform: translateX($offset);
@@ -80,7 +54,6 @@
 
 @mixin shift-on-hover-y($offset: -3px) {
     transition: $transition-default;
-    transform: translateY(0);
 
     &:hover {
         transform: translateY($offset);
