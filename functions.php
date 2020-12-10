@@ -112,6 +112,12 @@ function gutenbase_enqueue_assets() // Emoji に関するファイルを読み�
         //Scripts
         wp_register_script('slick-script', get_template_directory_uri() . '/vendor/slick/slick.js', array(), false, true ); //load into footer
         wp_enqueue_script('slick-script');
+
+        //=== INIT
+        //Scripts
+        wp_register_script('init-script', get_template_directory_uri() . '/js/site-init.js', array(), false, true ); //load into footer
+        wp_enqueue_script('init-script');
+
         //=== OFI
         //If IE, load OFI
         if (preg_match("~MSIE|Internet Explorer~i", $_SERVER["HTTP_USER_AGENT"]) || preg_match("~Trident/7.0(; Touch)?; rv:11.0~", $_SERVER["HTTP_USER_AGENT"])) :
@@ -121,6 +127,7 @@ function gutenbase_enqueue_assets() // Emoji に関するファイルを読み�
     }
 }
 add_action('wp_enqueue_scripts', 'gutenbase_enqueue_assets', 1); //load before block editor
+
 
 /* Script Preloader.
 macarthur.me/posts/preloading-javascript-in-wordpress
@@ -134,6 +141,7 @@ add_action('wp_head', function () {
     }
 }, 1);
 
+
 /* Script Defer/Async.
 wordpress.stackexchange.com/questions/359599/add-extra-parameter-in-script-tag-using-script-loader-tag
 ----------------------------------------------- */
@@ -143,6 +151,7 @@ function add_attribute_to_script_tag($tag, $handle) {
         'ofi-script',
         'jquery-new',
         'slick-script',
+        'init-script',
     );
     foreach($scripts_to_defer as $defer_script) {
        if ($defer_script === $handle) {
@@ -152,6 +161,7 @@ function add_attribute_to_script_tag($tag, $handle) {
     return $tag;
  }
  add_filter('script_loader_tag', 'add_attribute_to_script_tag', 10, 2);
+
 
 /* Add ACF options page
 ----------------------------------------------- */
@@ -198,6 +208,7 @@ function theme_slug_filter_wp_title($title_parts)
     return $title_parts;
 }
 add_filter('document_title_parts', 'theme_slug_filter_wp_title');
+
 
 /* Retrieve page URL using slug
 ページスラグで URLを得るファンクション
