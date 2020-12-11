@@ -90,6 +90,9 @@ remove_action('wp_head', 'print_emoji_detection_script', 7); // Emoji に関す�
 function gutenbase_enqueue_assets() // Emoji に関するファイルを読み込まないように
 {
     if (!is_admin()) {
+        //== DEFAULT JS
+        wp_enqueue_script('jquery');
+
         //== CRITICAL CSS
         wp_register_style('common-style', get_template_directory_uri() . '/style.css');
         wp_enqueue_style('common-style');
