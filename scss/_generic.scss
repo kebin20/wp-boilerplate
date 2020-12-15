@@ -278,82 +278,226 @@ template {
     display: none;
 }
 
-/*! Modern CSS Reset - https://dev.to/hankchizljaw/a-modern-css-reset-6p3 */
-// Box sizing rules
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
+// Reset CSS
+// html5doctor.com/html-5-reset-stylesheet/
+//----------------------------------------------- //
 
-// Remove default padding
-ul[class],
-ol[class] {
-    padding: 0;
-}
-
-// Remove default margin
+abbr,
+address,
+article,
+aside,
+audio,
+b,
+blockquote,
 body,
+canvas,
+caption,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
 h1,
 h2,
 h3,
 h4,
-p,
-ul[class],
-ol[class],
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
 li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
+mark,
+menu,
+nav,
+object,
+ol,
+p,
+pre,
+q,
+samp,
+section,
+small,
+span,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+ul,
+var,
+video {
     margin: 0;
+    padding: 0;
+    border: none;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0;
 }
 
-// Set core body defaults
-body {
-    min-height: 100vh;
-    scroll-behavior: smooth;
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
-}
-
-// Remove list styles on ul, ol elements with a class attribute
-ul[class],
-ol[class] {
-    list-style: none;
-}
-
-// A elements that don't have a class get default styles
-a:not([class]) {
-    text-decoration-skip-ink: auto;
-}
-
-// Make images easier to work with
-img {
-    max-width: 100%;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
     display: block;
 }
 
-// Natural flow and rhythm in articles by default
-article > * + * {
-    margin-top: 1em;
-}
-
-// Inherit fonts for inputs and buttons
-input,
-button,
-textarea,
-select {
-    font: inherit;
-}
-
-// Remove all animations and transitions for people that prefer not to see them
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+nav {
+    ul {
+        list-style: none;
     }
+}
+
+blockquote,
+q {
+    quotes: none;
+
+    &:before,
+    &:after {
+        content: '';
+    }
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0;
+}
+
+ins {
+    background-color: #FF9;
+    color: #000;
+    text-decoration: none;
+}
+
+mark {
+    background-color: #FF9;
+    color: #000;
+    font-style: italic;
+    font-weight: 700;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr,
+dfn {
+    &[title] {
+        border-bottom: 1px dotted;
+        cursor: help;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    margin: 1em 0;
+    padding: 0;
+    border: none;
+    border-top: 1px solid #CCC;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+:root {
+    tab-size: 4;
+}
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    line-height: 1;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+}
+
+abbr {
+    &[title] {
+        text-decoration: underline dotted;
+    }
+}
+
+b,
+strong {
+    font-weight: 700;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 1em;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+summary {
+    display: list-item;
 }
