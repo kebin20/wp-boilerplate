@@ -111,10 +111,12 @@ function gutenbase_enqueue_assets() // Emoji に関するファイルを読み�
 
         //=== AOS
         //Scripts
-        wp_register_script('aos-script', get_template_directory_uri() . '/vendor/aos/aos.js', array(), false, true ); //load into footer
-        wp_enqueue_script('aos-script');
-        wp_register_style('aos-styles', get_template_directory_uri() . '/vendor/aos/aos.css');
-        wp_enqueue_style('aos-styles');
+        if(!wp_is_mobile()):
+            wp_register_script('aos-script', get_template_directory_uri() . '/vendor/aos/aos.js', array(), false, true ); //load into footer
+            wp_enqueue_script('aos-script');
+            wp_register_style('aos-styles', get_template_directory_uri() . '/vendor/aos/aos.css');
+            wp_enqueue_style('aos-styles');
+        endif;
 
         //=== SLICK
         //Scripts
