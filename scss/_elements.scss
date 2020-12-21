@@ -22,7 +22,7 @@ a {
     &:hover,
     &:focus,
     &:active {
-        transition: $transition-default;
+        transition: all $transition-default;
         text-decoration: none;
         color: inherit;
     }

@@ -1,13 +1,5 @@
 // Measurements
 //---------------------------------------------- //
-@mixin mlr-auto {
-    margin-left: auto;
-    margin-right: auto;
-}
-@mixin max-width ($width) {
-    max-width: $width;
-    @include mlr-auto;
-}
 
 // Media
 //----------------------------------------------- //
@@ -28,32 +20,21 @@
 
 // Graphics
 //----------------------------------------------- //
-@mixin container-fill ($zindex: false) {
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
 
-    @if ($zindex) {
-        z-index: $zindex;
-    }
-}
 
 // Animations
 //----------------------------------------------- //
 
-@mixin shift-on-hover-x($offset: -3px) {
-    transition: $transition-default;
+@mixin shift-on-hover-x($offset: $shift-default-offset) {
+    transition: transform $transition-default;
 
     &:hover {
         transform: translateX($offset);
     }
 }
 
-@mixin shift-on-hover-y($offset: -3px) {
-    transition: $transition-default;
+@mixin shift-on-hover-y($offset: -#{$shift-default-offset}) {
+    transition: transform $transition-default;
 
     &:hover {
         transform: translateY($offset);

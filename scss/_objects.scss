@@ -1,49 +1,24 @@
-/* Responsive
------------------------------------------------ */
-@media only screen and (min-width: #{$breakpoint-m + 1px}) {
-    .sp-only {
-        display: none;
-    }
-}
-@media only screen and (max-width: $breakpoint-m) {
-    .pc-only {
-        display: none;
-    }
-}
-
 /* Text
 ----------------------------------------------- */
-
-/* Media
------------------------------------------------ */
-
-/* Measurements
------------------------------------------------ */
+.title {
+    
+}
 
 /* Containers
 ----------------------------------------------- */
-.padded-container {
-    padding: 80px 1rem;
+.wrapper {
 
-    @media only screen and (max-width: $breakpoint-m) {
-        padding: 40px 1rem;
-    }
+}
+
+.container {
+
 }
 
 /* Buttons
 ----------------------------------------------- */
+.bttn {
 
-/* Animations
------------------------------------------------ */
-
-/* Graphics
------------------------------------------------ */
-
-/* Icons
------------------------------------------------ */
-
-/* Colours & Themes
------------------------------------------------ */
+}
 
 /* Misc
 ----------------------------------------------- */
