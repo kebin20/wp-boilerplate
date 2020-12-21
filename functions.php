@@ -82,6 +82,14 @@ add_action('after_setup_theme', 'gutenbase_content_width', 0);
 /* Custom Code
 これからは　カスタムファンクション
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
+/* Move jQuery to footer
+----------------------------------------------- */
+function move_jquery_to_footer() {
+    wp_scripts()->add_data( 'jquery', 'group', 1 );
+    wp_scripts()->add_data( 'jquery-core', 'group', 1 );
+    wp_scripts()->add_data( 'jquery-migrate', 'group', 1 );
+}
+add_action( 'wp_enqueue_scripts', 'move_jquery_to_footer' );
 
 /* Queueing for Header scripts and styles.
 ----------------------------------------------- */
@@ -101,17 +109,17 @@ function gutenbase_enqueue_assets() // Emoji に関するファイルを読み�
         wp_register_style('font-awesome', get_template_directory_uri() . '/vendor/fontawesome/css/all.min.css');
         wp_enqueue_style('font-awesome');
 
-        //=== SLICK
-        //Scripts
-        wp_register_script('slick-script', get_template_directory_uri() . '/vendor/slick/slick.js', array(), false, true ); //load into footer
-        wp_enqueue_script('slick-script');
-
         //=== AOS
         //Scripts
         wp_register_script('aos-script', get_template_directory_uri() . '/vendor/aos/aos.js', array(), false, true ); //load into footer
         wp_enqueue_script('aos-script');
         wp_register_style('aos-styles', get_template_directory_uri() . '/vendor/aos/aos.css');
         wp_enqueue_style('aos-styles');
+
+        //=== SLICK
+        //Scripts
+        wp_register_script('slick-script', get_template_directory_uri() . '/vendor/slick/slick.js', array(), false, true ); //load into footer
+        wp_enqueue_script('slick-script');
 
         //=== INIT
         //Scripts
@@ -149,9 +157,9 @@ function add_attribute_to_script_tag($tag, $handle) {
     # add script handles to the array below
     $scripts_to_defer = array(
         'aos-script',
-        'ofi-script',
         'slick-script',
         'init-script',
+        'ofi-script',
     );
     foreach($scripts_to_defer as $defer_script) {
        if ($defer_script === $handle) {
