@@ -106,6 +106,13 @@ function gutenbase_enqueue_assets() // Emoji に関するファイルを読み�
         wp_register_script('slick-script', get_template_directory_uri() . '/vendor/slick/slick.js', array(), false, true ); //load into footer
         wp_enqueue_script('slick-script');
 
+        //=== AOS
+        //Scripts
+        wp_register_script('aos-script', get_template_directory_uri() . '/vendor/aos/aos.js', array(), false, true ); //load into footer
+        wp_enqueue_script('aos-script');
+        wp_register_style('aos-styles', get_template_directory_uri() . '/vendor/aos/aos.css');
+        wp_enqueue_style('aos-styles');
+
         //=== INIT
         //Scripts
         wp_register_script('init-script', get_template_directory_uri() . '/js/site-init.js', array(), false, true ); //load into footer
@@ -141,6 +148,7 @@ wordpress.stackexchange.com/questions/359599/add-extra-parameter-in-script-tag-u
 function add_attribute_to_script_tag($tag, $handle) {
     # add script handles to the array below
     $scripts_to_defer = array(
+        'aos-script',
         'ofi-script',
         'slick-script',
         'init-script',
