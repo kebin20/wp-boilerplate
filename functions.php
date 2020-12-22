@@ -111,7 +111,7 @@ function gutenbase_enqueue_assets() // Emoji に関するファイルを読み�
 
         //=== AOS
         //Scripts
-        if(!wp_is_mobile()):
+        if(!wp_is_mobile() and is_home()):
             wp_register_script('aos-script', get_template_directory_uri() . '/vendor/aos/aos.js', array(), false, true ); //load into footer
             wp_enqueue_script('aos-script');
             wp_register_style('aos-styles', get_template_directory_uri() . '/vendor/aos/aos.css');

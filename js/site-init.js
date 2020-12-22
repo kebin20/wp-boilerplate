@@ -5,16 +5,6 @@
  * Insert code to be loaded last here. jQuery has been loaded by the time this script is called.
  */
 
-/* === AOS === */
-if(typeof AOS != "undefined"){
-    AOS.init({
-        delay: 0, // values from 0 to 3000, with step 50ms
-        duration: 1000, // values from 0 to 3000, with step 50ms
-        easing: 'ease', // default easing for AOS animations
-        once: true, // whether animation should happen only once - while scrolling down
-    });
-}
-
 /* === Slick Slider === */
 jQuery('.slick-slider').slick({
     arrows: true,
@@ -28,3 +18,14 @@ jQuery('.slick-slider').slick({
     infinite: true,
     loop: true,
 });
+
+/* === AOS === */
+//Must be initiated after slick if there are animations in the slider
+if(typeof AOS != "undefined"){
+    AOS.init({
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 1000, // values from 0 to 3000, with step 50ms
+        easing: 'ease', // default easing for AOS animations
+        once: true, // whether animation should happen only once - while scrolling down
+    });
+}
