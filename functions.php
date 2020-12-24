@@ -128,6 +128,14 @@ function gutenbase_enqueue_assets() // Emoji に関するファイルを読み�
         wp_register_script('init-script', get_template_directory_uri() . '/js/site-init.js', array(), false, true ); //load into footer
         wp_enqueue_script('init-script');
 
+        //=== LIGHTBOX
+        // if (is_page()) :
+        //     wp_register_style('lightbox-style', get_template_directory_uri() . '/vendor/lightbox/css/lightbox.css');
+        //     wp_enqueue_style('lightbox-style');
+        //     wp_register_script('lightbox-script', get_template_directory_uri() . '/vendor/lightbox/js/lightbox.min.js', array(), false, true ); //load into footer
+        //     wp_enqueue_script('lightbox-script');
+        // endif;
+
         //=== OFI
         //If IE, load OFI
         if (preg_match("~MSIE|Internet Explorer~i", $_SERVER["HTTP_USER_AGENT"]) || preg_match("~Trident/7.0(; Touch)?; rv:11.0~", $_SERVER["HTTP_USER_AGENT"])) :
