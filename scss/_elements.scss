@@ -15,6 +15,7 @@ body {
     color: $c-black;
     background: $c-white;
     scroll-behavior: smooth;
+    overflow-anchor: auto;
 }
 
 a {
