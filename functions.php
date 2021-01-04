@@ -282,3 +282,18 @@ function mv_browser_body_class($classes)
     return $classes;
 }
 add_filter('body_class', 'mv_browser_body_class');
+
+/* Admin Area Custom CSS
+----------------------------------------------- */
+add_action('admin_head', 'my_admin_area_custom_css');
+function my_admin_area_custom_css() {
+?>
+    <style>
+        #addtag input[value="career_area"] ~ .form-field.term-description-wrap, /* Hide "career_area" tax description field */
+        #adminmenu #menu-comments /* Hide "Comments" menu item */
+        {
+            display:none;
+        }
+  </style>
+<?php
+}
