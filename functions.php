@@ -95,8 +95,7 @@ add_action( 'wp_enqueue_scripts', 'move_jquery_to_footer' );
 ----------------------------------------------- */
 remove_action('wp_print_styles', 'print_emoji_styles'); // Emoji に関するファイルを読み込まないように
 remove_action('wp_head', 'print_emoji_detection_script', 7); // Emoji に関するファイルを読み込まないように
-function gutenbase_enqueue_assets()
-{
+function gutenbase_enqueue_assets() {
     if (!is_admin()) {
         //== DEFAULT JS
         wp_enqueue_script('jquery');
