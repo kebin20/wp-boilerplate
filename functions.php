@@ -84,7 +84,8 @@ add_action('after_setup_theme', 'gutenbase_content_width', 0);
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 /* Move jQuery to footer
 ----------------------------------------------- */
-function move_jquery_to_footer() {
+function move_jquery_to_footer()
+{
     wp_scripts()->add_data( 'jquery', 'group', 1 );
     wp_scripts()->add_data( 'jquery-core', 'group', 1 );
     wp_scripts()->add_data( 'jquery-migrate', 'group', 1 );
@@ -95,7 +96,8 @@ add_action( 'wp_enqueue_scripts', 'move_jquery_to_footer' );
 ----------------------------------------------- */
 remove_action('wp_print_styles', 'print_emoji_styles'); // Emoji に関するファイルを読み込まないように
 remove_action('wp_head', 'print_emoji_detection_script', 7); // Emoji に関するファイルを読み込まないように
-function gutenbase_enqueue_assets() {
+function gutenbase_enqueue_assets()
+{
     if (!is_admin()) {
         //== DEFAULT JS
         wp_enqueue_script('jquery');
@@ -149,7 +151,8 @@ add_action('wp_enqueue_scripts', 'gutenbase_enqueue_assets', 1); //load before b
 /* Script Preloader.
 macarthur.me/posts/preloading-javascript-in-wordpress
 ----------------------------------------------- */
-add_action('wp_head', function () {
+add_action('wp_head', function ()
+{
     global $wp_scripts;
     foreach ($wp_scripts->queue as $handle) {
         $script = $wp_scripts->registered[$handle];
@@ -162,7 +165,8 @@ add_action('wp_head', function () {
 /* Script Defer/Async.
 wordpress.stackexchange.com/questions/359599/add-extra-parameter-in-script-tag-using-script-loader-tag
 ----------------------------------------------- */
-function add_attribute_to_script_tag($tag, $handle) {
+function add_attribute_to_script_tag($tag, $handle)
+{
     # add script handles to the array below
     $scripts_to_defer = array(
         'aos-script',
