@@ -23,7 +23,7 @@ a {
     &:hover,
     &:focus,
     &:active {
-        transition: all $transition-default;
+        transition: all $transition-default; //sass-lint:disable-line no-transition-all
         text-decoration: none;
         color: inherit;
     }
