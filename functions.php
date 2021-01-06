@@ -169,6 +169,7 @@ function add_attribute_to_script_tag($tag, $handle) {
         'aos-script',
         'slick-script',
         'init-script',
+        'lightbox-script',
         'ofi-script',
     );
     foreach($scripts_to_defer as $defer_script) {
