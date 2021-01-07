@@ -45,9 +45,14 @@ em {
 }
 
 img,
-iframe,
-svg {
+svg,
+iframe {
     display: block;
     max-width: 100%;
+
+}
+
+img,
+svg {
     height: auto;
 }

@@ -39,11 +39,6 @@ if (!function_exists('gutenbase_setup')) :
 		 */
         add_theme_support('post-thumbnails');
 
-        // This theme uses wp_nav_menu() in one location.
-        register_nav_menus(array(
-            'menu-1' => esc_html__('Primary', 'gutenbase'),
-        ));
-
         /*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
@@ -139,7 +134,8 @@ function gutenbase_enqueue_assets()
 
         //=== OFI
         //If IE, load OFI
-        if (preg_match("~MSIE|Internet Explorer~i", $_SERVER["HTTP_USER_AGENT"]) || preg_match("~Trident/7.0(; Touch)?; rv:11.0~", $_SERVER["HTTP_USER_AGENT"])) :
+        global $is_IE;
+        if ($is_IE) :
             wp_register_script('ofi-script', get_template_directory_uri() . '/vendor/ofi.min.js', array(), false, true ); //load into footer
             wp_enqueue_script('ofi-script');
         endif;
@@ -156,8 +152,10 @@ add_action('wp_head', function ()
     global $wp_scripts;
     foreach ($wp_scripts->queue as $handle) {
         $script = $wp_scripts->registered[$handle];
-        $source = $script->src . ($script->ver ? "?ver={$script->ver}" : ""); // If version is set, append to end of source.
-        echo "<link rel='preload' href='{$source}' as='script'/>\n"; // Spit out the tag.
+        if ($script->src) {
+            $source = $script->src . ($script->ver ? "?ver={$script->ver}" : ""); // If version is set, append to end of source.
+            echo "<link rel='preload' href='{$source}' as='script'/>\n"; // Spit out the tag.
+        }
     }
 }, 1);
 

@@ -9,7 +9,9 @@
  */
 
 $bodyClass = array();
-//$bodyClass[] = 'internet-explorer'; //add to body class
+if(wp_is_mobile()) :
+    $bodyClass[] = 'is-mobile'; //add to body class
+endif;
 ?>
 
 <!doctype html>
