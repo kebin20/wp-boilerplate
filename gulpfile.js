@@ -19,7 +19,7 @@ function buildStyles() {
     return src('scss/style.scss')
     .pipe(plumbError()) // Global error handler through all pipes.
     //.pipe(sourcemaps.init())
-    .pipe(sass({ outputStyle: 'compressed' }))
+    .pipe(sass({ outputStyle: 'compressed', indentWidth: 4, }))
     .pipe(autoprefixer(['last 2 versions', '> 1%', 'ie 11']))
     //.pipe(sourcemaps.write())
     .pipe(dest('.'))

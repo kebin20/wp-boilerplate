@@ -84,7 +84,8 @@ add_action('after_setup_theme', 'gutenbase_content_width', 0);
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 /* Move jQuery to footer
 ----------------------------------------------- */
-function move_jquery_to_footer() {
+function move_jquery_to_footer()
+{
     wp_scripts()->add_data( 'jquery', 'group', 1 );
     wp_scripts()->add_data( 'jquery-core', 'group', 1 );
     wp_scripts()->add_data( 'jquery-migrate', 'group', 1 );
@@ -93,9 +94,9 @@ add_action( 'wp_enqueue_scripts', 'move_jquery_to_footer' );
 
 /* Queueing for Header scripts and styles.
 ----------------------------------------------- */
-remove_action('wp_print_styles', 'print_emoji_styles');
+remove_action('wp_print_styles', 'print_emoji_styles'); // Emoji に関するファイルを読み込まないように
 remove_action('wp_head', 'print_emoji_detection_script', 7); // Emoji に関するファイルを読み込まないように
-function gutenbase_enqueue_assets() // Emoji に関するファイルを読み込まないように
+function gutenbase_enqueue_assets()
 {
     if (!is_admin()) {
         //== DEFAULT JS
@@ -129,12 +130,21 @@ function gutenbase_enqueue_assets() // Emoji に関するファイルを読み�
         wp_enqueue_script('init-script');
 
         //=== LIGHTBOX
+<<<<<<< HEAD
         // if (is_page()) :
         //     wp_register_style('lightbox-style', get_template_directory_uri() . '/vendor/lightbox/css/lightbox.css');
         //     wp_enqueue_style('lightbox-style');
         //     wp_register_script('lightbox-script', get_template_directory_uri() . '/vendor/lightbox/js/lightbox.min.js', array(), false, true ); //load into footer
         //     wp_enqueue_script('lightbox-script');
         // endif;
+=======
+        if (is_page()) :
+            wp_register_style('lightbox-style', get_template_directory_uri() . '/vendor/lightbox/css/lightbox.css');
+            wp_enqueue_style('lightbox-style');
+            wp_register_script('lightbox-script', get_template_directory_uri() . '/vendor/lightbox/js/lightbox.min.js', array(), false, true ); //load into footer
+            wp_enqueue_script('lightbox-script');
+        endif;
+>>>>>>> 3380a826a287d1168bbecf4ce1764c559f26c9e1
 
         //=== OFI
         //If IE, load OFI
@@ -150,7 +160,8 @@ add_action('wp_enqueue_scripts', 'gutenbase_enqueue_assets', 1); //load before b
 /* Script Preloader.
 macarthur.me/posts/preloading-javascript-in-wordpress
 ----------------------------------------------- */
-add_action('wp_head', function () {
+add_action('wp_head', function ()
+{
     global $wp_scripts;
     foreach ($wp_scripts->queue as $handle) {
         $script = $wp_scripts->registered[$handle];
@@ -163,12 +174,14 @@ add_action('wp_head', function () {
 /* Script Defer/Async.
 wordpress.stackexchange.com/questions/359599/add-extra-parameter-in-script-tag-using-script-loader-tag
 ----------------------------------------------- */
-function add_attribute_to_script_tag($tag, $handle) {
+function add_attribute_to_script_tag($tag, $handle)
+{
     # add script handles to the array below
     $scripts_to_defer = array(
         'aos-script',
         'slick-script',
         'init-script',
+        'lightbox-script',
         'ofi-script',
     );
     foreach($scripts_to_defer as $defer_script) {
@@ -283,6 +296,7 @@ function mv_browser_body_class($classes)
 }
 add_filter('body_class', 'mv_browser_body_class');
 
+<<<<<<< HEAD
 /* Admin Area Custom CSS
 ----------------------------------------------- */
 add_action('admin_head', 'my_admin_area_custom_css');
@@ -297,3 +311,12 @@ function my_admin_area_custom_css() {
   </style>
 <?php
 }
+=======
+/* Remove Customizer support
+----------------------------------------------- */
+function goheiji_customize_register( $wp_customize ) {
+    $wp_customize->remove_panel( 'nav_menus');
+    $wp_customize->remove_section( 'custom_css');
+}
+add_action( 'customize_register', 'goheiji_customize_register', 50 );
+>>>>>>> 3380a826a287d1168bbecf4ce1764c559f26c9e1

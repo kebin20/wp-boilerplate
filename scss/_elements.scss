@@ -15,6 +15,7 @@ body {
     color: $c-black;
     background: $c-white;
     scroll-behavior: smooth;
+    overflow-anchor: auto;
 }
 
 a {
@@ -22,13 +23,14 @@ a {
     &:hover,
     &:focus,
     &:active {
-        transition: all $transition-default;
+        transition: all $transition-default; //sass-lint:disable-line no-transition-all
         text-decoration: none;
         color: inherit;
     }
 }
 
 ::selection {
+    color: $c-white;
     background: $c-theme-color;
 }
 

@@ -1,3 +1,109 @@
+/// Blanket Reset
+// ========================================================================== //
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main {
+    display: block;
+}
+
 *,
 :after,
 :before {
@@ -21,21 +127,21 @@ html {
 /// Sections
 // ========================================================================== //
 // Remove the margin in all browsers.
-body {
-    margin: 0;
-}
+// body {
+//     margin: 0;
+// }
 
 // Render the `main` element consistently in IE.
-main {
-    display: block;
-}
+// main {
+//     display: block;
+// }
 
 // Correct the font size and margin on `h1` elements within `section` and
 // `article` contexts in Chrome, Firefox, and Safari.
-h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-}
+// h1 {
+//     font-size: 2em;
+//     margin: 0.67em 0;
+// }
 
 
 /// Grouping content
@@ -63,9 +169,9 @@ pre {
 /// Text-level semantics
 // ========================================================================== //
 // Remove the gray background on active links in IE 10.
-a {
-    background-color: transparent;
-}
+// a {
+//     background-color: transparent;
+// }
 
 // 1. Remove the bottom border in Chrome 57-
 // 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
@@ -96,15 +202,15 @@ samp {
 }
 
 // Add the correct font size in all browsers.
-small {
-    font-size: 80%;
-}
+// small {
+//     font-size: 80%;
+// }
 
 // Prevent `sub` and `sup` elements from affecting the line height in
 // all browsers.
 sub,
 sup {
-    font-size: 75%;
+    // font-size: 75%;
     line-height: 0;
     position: relative;
     vertical-align: baseline;
