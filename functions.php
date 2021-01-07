@@ -130,21 +130,12 @@ function gutenbase_enqueue_assets()
         wp_enqueue_script('init-script');
 
         //=== LIGHTBOX
-<<<<<<< HEAD
-        // if (is_page()) :
-        //     wp_register_style('lightbox-style', get_template_directory_uri() . '/vendor/lightbox/css/lightbox.css');
-        //     wp_enqueue_style('lightbox-style');
-        //     wp_register_script('lightbox-script', get_template_directory_uri() . '/vendor/lightbox/js/lightbox.min.js', array(), false, true ); //load into footer
-        //     wp_enqueue_script('lightbox-script');
-        // endif;
-=======
         if (is_page()) :
             wp_register_style('lightbox-style', get_template_directory_uri() . '/vendor/lightbox/css/lightbox.css');
             wp_enqueue_style('lightbox-style');
             wp_register_script('lightbox-script', get_template_directory_uri() . '/vendor/lightbox/js/lightbox.min.js', array(), false, true ); //load into footer
             wp_enqueue_script('lightbox-script');
         endif;
->>>>>>> 3380a826a287d1168bbecf4ce1764c559f26c9e1
 
         //=== OFI
         //If IE, load OFI
@@ -296,22 +287,6 @@ function mv_browser_body_class($classes)
 }
 add_filter('body_class', 'mv_browser_body_class');
 
-<<<<<<< HEAD
-/* Admin Area Custom CSS
------------------------------------------------ */
-add_action('admin_head', 'my_admin_area_custom_css');
-function my_admin_area_custom_css() {
-?>
-    <style>
-        #addtag input[value="career_area"] ~ .form-field.term-description-wrap, /* Hide "career_area" tax description field */
-        #adminmenu #menu-comments /* Hide "Comments" menu item */
-        {
-            display:none;
-        }
-  </style>
-<?php
-}
-=======
 /* Remove Customizer support
 ----------------------------------------------- */
 function goheiji_customize_register( $wp_customize ) {
@@ -319,4 +294,3 @@ function goheiji_customize_register( $wp_customize ) {
     $wp_customize->remove_section( 'custom_css');
 }
 add_action( 'customize_register', 'goheiji_customize_register', 50 );
->>>>>>> 3380a826a287d1168bbecf4ce1764c559f26c9e1
