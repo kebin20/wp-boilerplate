@@ -257,7 +257,7 @@
 
 /* Hide slick pictures before page load
 ----------------------------------------------- */
-.slick-slider:not(.slick-initialized) img:not(:first-of-type) {
+.slick-slider:not(.slick-initialized) .slick-slide:not(:first-of-type) {
     position: absolute;
     left: -5000px;
 }
