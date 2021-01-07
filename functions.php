@@ -134,7 +134,8 @@ function gutenbase_enqueue_assets()
 
         //=== OFI
         //If IE, load OFI
-        if (preg_match("~MSIE|Internet Explorer~i", $_SERVER["HTTP_USER_AGENT"]) || preg_match("~Trident/7.0(; Touch)?; rv:11.0~", $_SERVER["HTTP_USER_AGENT"])) :
+        global $is_IE;
+        if ($is_IE) :
             wp_register_script('ofi-script', get_template_directory_uri() . '/vendor/ofi.min.js', array(), false, true ); //load into footer
             wp_enqueue_script('ofi-script');
         endif;
