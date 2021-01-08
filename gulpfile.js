@@ -19,7 +19,7 @@ function buildStyles() {
     return src('scss/style.scss')
         .pipe(plumbError()) // Global error handler through all pipes.
         //.pipe(sourcemaps.init())
-        .pipe(sass({ outputStyle: 'compressed', indentWidth: 4, }))
+        .pipe(sass({ outputStyle: 'expanded', indentWidth: 4, })) //Expanded for dev.
         .pipe(autoprefixer(['last 2 versions', '> 1%', 'ie 11']))
         //.pipe(sourcemaps.write())
         .pipe(dest('.'))
@@ -28,11 +28,23 @@ function buildStyles() {
 
 // Watch changes on all *.scss files, lint them and
 // trigger buildStyles() at the end.
-function watchFiles() {
+function watchStyles() {
     watch(
         ['scss/*.scss', 'scss/**/*.scss'],
         { events: 'all', ignoreInitial: false },
-        series(sassLint, buildStyles, browserSync)
+        series(sassLint, buildStyles)
+    );
+}
+
+// Refresh page on PHP change detection
+function watchPHP() {
+    return watch(
+        ['*.php', '**/*.php'],
+        { events: 'all', ignoreInitial: true },
+        function (done) {
+            browsersync.reload();
+            done();
+        }
     );
 }
 
@@ -40,7 +52,7 @@ function watchFiles() {
 function browserSync(done) {
     browsersync.init({
         proxy: 'localhost:3000/gutenbase-wp/', // Change this value to match your local URL.
-        browser: "google chrome",
+        browser: 'google chrome',
         open: 'external',
     });
     done();
@@ -75,7 +87,6 @@ function plumbError() {
 }
 
 // Export commands.
-exports.default = parallel(browserSync, watchFiles); // $ gulp
-exports.sass = buildStyles; // $ gulp sass
-exports.watch = watchFiles; // $ gulp watch
+exports.default = browserSync, parallel(watchStyles, watchPHP); // $ gulp
+exports.watch = series(browserSync, parallel(watchStyles, watchPHP)); // $ gulp watch
 exports.build = series(buildStyles); // $ gulp build
