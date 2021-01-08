@@ -41,6 +41,7 @@ function browserSync(done) {
     browsersync.init({
         proxy: 'localhost:3000/gutenbase-wp/', // Change this value to match your local URL.
         browser: "google chrome",
+        open: 'external',
     });
     done();
 }
