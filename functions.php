@@ -284,11 +284,3 @@ function mv_browser_body_class($classes)
     return $classes;
 }
 add_filter('body_class', 'mv_browser_body_class');
-
-/* Remove Customizer support
------------------------------------------------ */
-function gutenbase_customize_register( $wp_customize ) {
-    $wp_customize->remove_panel( 'nav_menus');
-    $wp_customize->remove_section( 'custom_css');
-}
-add_action( 'customize_register', 'gutenbase_customize_register', 50 );
