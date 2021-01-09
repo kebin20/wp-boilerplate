@@ -185,13 +185,12 @@
 }
 
 /* Dots */
-.slick-dotted.slick-slider {
-    margin-bottom: 30px;
-}
-
 .slick-dots {
+    $dot-size: 3rem;
+
     position: absolute;
-    bottom: -25px;
+    z-index: 1001;
+    bottom: 3rem;
     display: block;
     width: 100%;
     padding: 0;
@@ -216,10 +215,11 @@
             height: 20px;
             padding: 5px;
             cursor: pointer;
-            color: transparent;
             border: none;
             outline: none;
             background: transparent;
+            color: $c-white;
+
 
             &:active,
             &:hover,
@@ -233,24 +233,23 @@
             }
 
             &:before {
-                font-family: 'slick';
-                font-size: 6px;
-                line-height: 20px;
+                content: '•';
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 20px;
-                height: 20px;
-                content: '•';
+                width: $dot-size;
+                height: $dot-size;
+                font-size: $dot-size;
+                line-height: 1;
                 text-align: center;
-                opacity: 0.25;
-                color: $c-black;
+                text-shadow: $text-shadow;
+                opacity: 0.5;
+                transition: opacity $transition-default;
             }
         }
 
         &.slick-active button:before {
-            opacity: 0.75;
-            color: $c-black;
+            opacity: 1;
         }
     }
 }
