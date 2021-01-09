@@ -287,8 +287,8 @@ add_filter('body_class', 'mv_browser_body_class');
 
 /* Remove Customizer support
 ----------------------------------------------- */
-function goheiji_customize_register( $wp_customize ) {
+function gutenbase_customize_register( $wp_customize ) {
     $wp_customize->remove_panel( 'nav_menus');
     $wp_customize->remove_section( 'custom_css');
 }
-add_action( 'customize_register', 'goheiji_customize_register', 50 );
+add_action( 'customize_register', 'gutenbase_customize_register', 50 );
