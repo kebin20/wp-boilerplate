@@ -6,18 +6,25 @@
  */
 
 /* === Slick Slider === */
-jQuery('.slick-slider').slick({
-    arrows: true,
-    dots: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    speed: 1000,
-    fade: true,
-    infinite: true,
-    loop: true,
-});
+if (jQuery('.slick-slider')) {
+    jQuery('.slick-slider').each(function() {
+        var slider = jQuery(this);
+        if (slider.children().length > 1) {
+            slider.slick({
+                arrows: true,
+                dots: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                speed: 1000,
+                fade: true,
+                infinite: true,
+                loop: true,
+            });
+        }
+    });
+}
 
 /* === AOS === */
 //Must be initiated after slick if there are animations in the slider
