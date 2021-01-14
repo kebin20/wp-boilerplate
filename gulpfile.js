@@ -36,10 +36,10 @@ function watchStyles() {
     );
 }
 
-// Refresh page on PHP change detection
-function watchPHP() {
+// Refresh page on PHP and JS change
+function watchOther() {
     return watch(
-        ['*.php', '**/*.php'],
+        ['*.php', '**/*.php', '*.js', '**/*.js'],
         { events: 'all', ignoreInitial: true },
         function (done) {
             browsersync.reload();
@@ -87,6 +87,6 @@ function plumbError() {
 }
 
 // Export commands.
-exports.default = browserSync, parallel(watchStyles, watchPHP); // $ gulp
-exports.watch = series(browserSync, parallel(watchStyles, watchPHP)); // $ gulp watch
+exports.default = browserSync, parallel(watchStyles, watchOther); // $ gulp
+exports.watch = series(browserSync, parallel(watchStyles, watchOther)); // $ gulp watch
 exports.build = series(buildStyles); // $ gulp build
