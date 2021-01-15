@@ -1,10 +1,13 @@
-// Colors
+// Colors / Shadows
 //----------------------------------------------- //
 $c-black: #000;
 $c-white: #FFF;
 $c-text: #444;
 $c-theme-color: #6E98CC;
 $c-shadow: #323232; //color used in shadow functions of tools
+
+$text-shadow: 0 0 0.3em rgba($c-shadow, 0.6);
+$box-shadow: 0 0 2rem rgba($c-shadow, 0.3);
 
 // Fonts
 //----------------------------------------------- //
