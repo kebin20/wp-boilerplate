@@ -93,6 +93,8 @@ remove_action('wp_print_styles', 'print_emoji_styles'); // Emoji に関するフ
 remove_action('wp_head', 'print_emoji_detection_script', 7); // Emoji に関するファイルを読み込まないように
 function gutenbase_enqueue_assets()
 {
+    global $is_IE;
+
     if (!is_admin()) {
         //== DEFAULT JS
         wp_enqueue_script('jquery');
@@ -121,8 +123,13 @@ function gutenbase_enqueue_assets()
 
         //=== INIT
         //Scripts
-        wp_register_script('init-script', get_template_directory_uri() . '/js/site-init.js', array(), false, true ); //load into footer
-        wp_enqueue_script('init-script');
+        if (!$is_IE) :
+            wp_register_script('init-script', get_template_directory_uri() . '/js/site-init.js', array(), false, true ); //load into footer
+            wp_enqueue_script('init-script');
+        else:
+            wp_register_script('init-script-ie', get_template_directory_uri() . '/js/site-init-ie.js', array(), false, true ); //load into footer
+            wp_enqueue_script('init-script-ie');
+        endif;
 
         //=== LIGHTBOX
         if (is_page()) :

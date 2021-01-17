@@ -4,15 +4,27 @@
 // $ npm install --global gulp-cli
 // $ npm install
 const { src, dest, watch, series, parallel } = require('gulp');
+const concat = require('gulp-concat');
 const browsersync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 //const sourcemaps = require('gulp-sourcemaps');
 const plumber = require('gulp-plumber');
 const sasslint = require('gulp-sass-lint');
+const babel = require('gulp-babel'); // CHANGED
 const cache = require('gulp-cached');
 const notify = require('gulp-notify');
 const beeper = require('beeper');
+
+// Watch changes on all *.scss files, lint them and
+// trigger buildStyles() at the end.
+function watchStyles() {
+    watch(
+        ['scss/*.scss', 'scss/**/*.scss'],
+        { events: 'all', ignoreInitial: false },
+        series(sassLint, buildStyles)
+    );
+}
 
 // Compile CSS from Sass.
 function buildStyles() {
@@ -26,20 +38,32 @@ function buildStyles() {
         .pipe(browsersync.reload({ stream: true }));
 }
 
-// Watch changes on all *.scss files, lint them and
-// trigger buildStyles() at the end.
-function watchStyles() {
-    watch(
-        ['scss/*.scss', 'scss/**/*.scss'],
-        { events: 'all', ignoreInitial: false },
-        series(sassLint, buildStyles)
+// Refresh page on JS change
+function watchJS() {
+    return watch(
+        ['js/site-init.js'],
+        { events: 'all', ignoreInitial: true },
+        series(buildJS)
     );
 }
 
-// Refresh page on PHP and JS change
-function watchOther() {
+// Compile JS with Babel.
+function buildJS() {
+    return src('js/site-init.js')
+        // .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: ['@babel/preset-env']
+        }))
+        .pipe(concat('site-init-ie.js'))
+        // .pipe(sourcemaps.write('.'))
+        .pipe(dest('js'))
+        .pipe(browsersync.reload({ stream: true }));
+}
+
+// Refresh page on PHP change
+function watchPHP() {
     return watch(
-        ['*.php', '**/*.php', '*.js', '**/*.js'],
+        ['*.php', '**/*.php'],
         { events: 'all', ignoreInitial: true },
         function (done) {
             browsersync.reload();
@@ -87,6 +111,6 @@ function plumbError() {
 }
 
 // Export commands.
-exports.default = browserSync, parallel(watchStyles, watchOther); // $ gulp
-exports.watch = series(browserSync, parallel(watchStyles, watchOther)); // $ gulp watch
-exports.build = series(buildStyles); // $ gulp build
+exports.default = browserSync, parallel(watchStyles, watchPHP, watchJS); // $ gulp
+exports.watch = series(browserSync, parallel(watchStyles, watchPHP, watchJS)); // $ gulp watch
+exports.build = series(buildStyles, buildJS); // $ gulp build
