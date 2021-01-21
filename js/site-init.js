@@ -5,7 +5,8 @@
  * Insert code to be loaded last here. jQuery has been loaded by the time this script is called.
  */
 
-/* === Slick Slider === */
+/* Slick Slider
+----------------------------------------------- */
 if (jQuery('.slick-slider')) {
     jQuery('.slick-slider').each(function() {
         var slider = jQuery(this);
@@ -26,7 +27,8 @@ if (jQuery('.slick-slider')) {
     });
 }
 
-/* === AOS === */
+/* AOS
+----------------------------------------------- */
 //Must be initiated after slick if there are animations in the slider
 if(typeof AOS != "undefined"){
     AOS.init({
