@@ -139,12 +139,16 @@ function gutenbase_enqueue_assets()
             wp_enqueue_script('lightbox-script');
         endif;
 
-        //=== OFI
-        //If IE, load OFI
+        //=== IE Polyfills
+        //If IE, load polyfills
         global $is_IE;
         if ($is_IE) :
-            wp_register_script('ofi-script', get_template_directory_uri() . '/vendor/ofi.min.js', array(), false, true ); //load into footer
+            // Object Fit
+            wp_register_script('ofi-script', get_template_directory_uri() . '/vendor/polyfills/ofi.min.js', array(), false, true ); //load into footer
             wp_enqueue_script('ofi-script');
+            // CSS variables
+            wp_register_script('css-variables-script', get_template_directory_uri() . '/vendor/polyfills/css-vars-ponyfill.min.js', array(), false, true ); //load into footer
+            wp_enqueue_script('css-variables-script');
         endif;
     }
 }
