@@ -123,6 +123,6 @@ function plumbError() {
 }
 
 // Export commands.
-exports.default = browserSync, parallel(watchStyles, watchPHP, watchJS, watchBabel); // $ gulp
+exports.default = series(browserSync, parallel(watchStyles, watchPHP, watchJS, watchBabel)); // $ gulp
 exports.watch = series(browserSync, parallel(watchStyles, watchPHP, watchJS, watchBabel)); // $ gulp watch
 exports.build = series(buildStyles, buildBabel); // $ gulp build
