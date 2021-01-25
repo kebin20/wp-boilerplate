@@ -38,17 +38,17 @@ function buildStyles() {
         .pipe(browsersync.reload({ stream: true }));
 }
 
-// Refresh page on JS change
-function watchJS() {
+// Refresh page on site-init.js change
+function watchBabel() {
     return watch(
         ['js/site-init.js'],
         { events: 'all', ignoreInitial: true },
-        series(buildJS)
+        series(buildBabel)
     );
 }
 
-// Compile JS with Babel.
-function buildJS() {
+// Compile site-init.js with Babel.
+function buildBabel() {
     return src('js/site-init.js')
         // .pipe(sourcemaps.init())
         .pipe(babel({
@@ -58,6 +58,18 @@ function buildJS() {
         // .pipe(sourcemaps.write('.'))
         .pipe(dest('js'))
         .pipe(browsersync.reload({ stream: true }));
+}
+
+// Refresh page on JS change
+function watchJS() {
+    return watch(
+        ['*.js', '**/*.js', '!js/site-init.js'], // Watching everything but site-init
+        { events: 'all', ignoreInitial: true },
+        function (done) {
+            browsersync.reload();
+            done();
+        }
+    );
 }
 
 // Refresh page on PHP change
@@ -111,6 +123,6 @@ function plumbError() {
 }
 
 // Export commands.
-exports.default = browserSync, parallel(watchStyles, watchPHP, watchJS); // $ gulp
-exports.watch = series(browserSync, parallel(watchStyles, watchPHP, watchJS)); // $ gulp watch
-exports.build = series(buildStyles, buildJS); // $ gulp build
+exports.default = browserSync, parallel(watchStyles, watchPHP, watchJS, watchBabel); // $ gulp
+exports.watch = series(browserSync, parallel(watchStyles, watchPHP, watchJS, watchBabel)); // $ gulp watch
+exports.build = series(buildStyles, buildBabel); // $ gulp build
