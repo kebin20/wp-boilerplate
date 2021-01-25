@@ -10,10 +10,6 @@ rules:
     - 1
     -
       convention: none
-  class-name-format:
-  - 1
-  -
-    convention: hyphenatedbem
   extends-before-mixins: 2
   extends-before-declarations: 2
   force-element-nesting: 0
