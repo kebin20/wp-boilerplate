@@ -174,7 +174,7 @@ add_action('wp_head', function ()
 /* Script Defer/Async.
 wordpress.stackexchange.com/questions/359599/add-extra-parameter-in-script-tag-using-script-loader-tag
 ----------------------------------------------- */
-function add_attribute_to_script_tag($tag, $handle)
+function defer_scripts($tag, $handle)
 {
     # add script handles to the array below
     $scripts_to_defer = array(
@@ -191,7 +191,7 @@ function add_attribute_to_script_tag($tag, $handle)
     }
     return $tag;
  }
- add_filter('script_loader_tag', 'add_attribute_to_script_tag', 10, 2);
+ add_filter('script_loader_tag', 'defer_scripts', 10, 2);
 
 
 /* Add ACF options page
@@ -231,14 +231,14 @@ function get_top_parent_page_id()
 
 /* Overide default <title>
 ----------------------------------------------- */
-function theme_slug_filter_wp_title($title_parts)
+function override_title($title_parts)
 {
     if (is_404()) {
         $title_parts['title'] = 'ページが見つかりません';
     }
     return $title_parts;
 }
-add_filter('document_title_parts', 'theme_slug_filter_wp_title');
+add_filter('document_title_parts', 'override_title');
 
 
 /* Retrieve page URL using slug
@@ -259,18 +259,18 @@ function get_url_by_slug($page_slug)
 
 /* Dequeue loading of default Gutenburg stylesheet (for sites using legacy editors)
 ----------------------------------------------- */
-function smartwp_remove_wp_block_library_css()
+function remove_wp_block_library_css()
 {
     wp_dequeue_style('wp-block-library');
     wp_dequeue_style('wp-block-library-theme');
 }
-add_action('wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100);
+add_action('wp_enqueue_scripts', 'remove_wp_block_library_css', 100);
 
 
-/* Add browser type to body class
+/* Add browser-type to body class
 www.wpbeginner.com/wp-themes/how-to-add-user-browser-and-os-classes-in-wordpress-body-class/
 ----------------------------------------------- */
-function mv_browser_body_class($classes)
+function add_browser_type_to_body_classes($classes)
 {
     global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
     if ($is_lynx) $classes[] = 'lynx';
@@ -294,4 +294,4 @@ function mv_browser_body_class($classes)
     }
     return $classes;
 }
-add_filter('body_class', 'mv_browser_body_class');
+add_filter('body_class', 'add_browser_type_to_body_classes');
