@@ -9,9 +9,18 @@
  */
 
 $bodyClass = array();
-if(wp_is_mobile()) :
-    $bodyClass[] = 'is-mobile'; //add to body class
+
+// Add .is-mobile to body classes
+if (wp_is_mobile()) :
+    $bodyClass[] = 'is-mobile';
 endif;
+
+// Add page slug to body classes
+if (is_page()) :
+    $page_slug = sanitize_post($GLOBALS['wp_the_query']->get_queried_object())->post_name;
+    $bodyClass[] = 'page-' . $page_slug;
+endif;
+
 ?>
 
 <!doctype html>
