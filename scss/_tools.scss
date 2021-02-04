@@ -23,6 +23,8 @@
 //----------------------------------------------- //
 // `clothoid` smoothing function
 // github.com/oti/smooth-gradient-sass-function
+// Default color is '$c-black', start opacity is `1`
+// Usage: background-image: linear-gradient(to bottom, scrim-gradient($c-white, 1));
 @function clothoid-gradient($color: $c-black, $opacity: 1) {
     $clothoid: (
         1: 0%,
