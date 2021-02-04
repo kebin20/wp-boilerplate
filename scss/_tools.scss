@@ -21,6 +21,31 @@
 
 // Graphics
 //----------------------------------------------- //
+// `clothoid` smoothing function
+// github.com/oti/smooth-gradient-sass-function
+@function clothoid-gradient($color: $c-black, $opacity: 1) {
+    $clothoid: (
+        1: 0%,
+        0.3: 50%,
+        0.15: 65%,
+        0.075: 75.5%,
+        0.037: 82.85%,
+        0.019: 88%,
+        0: 100%
+    );
+
+    @if type-of($color) != color {
+        @return null;
+    }
+
+    $rgba: '#{red($color)},#{green($color)},#{blue($color)}';
+    $color-stops: ();
+
+    @each $key, $value in $clothoid {
+        $color-stops: append($color-stops, unquote('rgba(#{$rgba}, #{$key * $opacity}) #{$value}'), 'comma');
+    }
+    @return $color-stops;
+}
 
 
 // Animations
