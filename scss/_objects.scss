@@ -42,21 +42,21 @@
 
     @media screen and (min-width: $breakpoint-s) {
         div {
-            padding-bottom: 45%;
+            padding-bottom: 55%;
 
         }
     }
 
     @media screen and (min-width: $breakpoint-ml) {
         div {
-            padding-bottom: 30%;
+            padding-bottom: 45%;
 
         }
     }
 
     @media screen and (min-width: $breakpoint-l) {
         div {
-            padding-bottom: 25%;
+            padding-bottom: 40%;
         }
     }
 }
