@@ -4,7 +4,7 @@
  * 
  * Insert code to be loaded last here. jQuery has been loaded by the time this script is called.
  */
-
+const errorStyles = 'color: red';
 const isMobile = document.body.classList.contains(".is-mobile") || window.matchMedia("(max-width: 900px)").matches;
 const isHome = document.body.classList.contains(".home");
 
@@ -13,13 +13,13 @@ const isHome = document.body.classList.contains(".home");
 try {
     slickInitiate();
 } catch (err) {
-    console.log("slickInitiate Error: " + err + ".");
+    console.log("slickInitiate Error: " + err + ".", errorStyles);
 }
 
 try {
     aosInitiate();
 } catch (err) {
-    console.log("aosInitiate Error: " + err + ".");
+    console.log("aosInitiate Error: " + err + ".", errorStyles);
 }
 
 
