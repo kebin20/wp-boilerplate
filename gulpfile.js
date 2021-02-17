@@ -90,7 +90,7 @@ function browserSync(done) {
         proxy: 'localhost:3000/gutenbase-wp/', // Change this value to match your local URL.
         browser: 'google chrome',
         open: 'external',
-        // host : '192.168.0.254' // In case of static IP
+        // host : '192.168.7.254' // In case of static IP
     });
     done();
 }
