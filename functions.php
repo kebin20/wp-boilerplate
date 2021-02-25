@@ -185,9 +185,6 @@ function defer_scripts($tag, $handle)
         'slick-script',
         'init-script',
         'lightbox-script',
-        'ofi-script',
-        'css-variables-script',
-        'classlist-script'
     );
     foreach ($scripts_to_defer as $defer_script) {
         if ($defer_script === $handle) {
