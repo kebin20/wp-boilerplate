@@ -9,11 +9,13 @@ $c-shadow: #323232; //color used in shadow functions of tools
 $text-shadow: 0 0 0.3em rgba($c-shadow, 0.6);
 $box-shadow: 0 0 2rem rgba($c-shadow, 0.3);
 
+
 // Fonts
 //----------------------------------------------- //
 $ff-sans: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Yu Gothic', YuGothic, Verdana, Meiryo, 'M+ 1p', sans-serif;
 $ff-serif: '游明朝', YuMincho, 'Hiragino Mincho ProN W3', 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif;
 $ff-fontawesome: 'Font Awesome 5 Free';
+
 
 // Font Weights
 //----------------------------------------------- //
@@ -21,20 +23,25 @@ $fw-light: 300;
 $fw-regular: 400;
 $fw-bold: 600;
 
+
 // Font Sizes
 //----------------------------------------------- //
 $fs-body: 1.6rem;
+
 
 // Measurements
 //----------------------------------------------- //
 $breakpoint-m: 900px;
 
+
 // Z-Indexes
 //----------------------------------------------- //
+
 
 // Characters
 //----------------------------------------------- //
 $char-chevron-down: '\f107';
+
 
 // Misc
 //----------------------------------------------- //
