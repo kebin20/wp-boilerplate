@@ -10,47 +10,52 @@ const isHome = document.body.classList.contains("home");
 
 /* Launch Site
 ----------------------------------------------- */
-try {
-    slickInitiate();
-} catch (err) {
-    console.log("%c slickInitiate Error: " + err + ".", errorStyles);
-}
-
-try {
-    aosInitiate();
-} catch (err) {
-    console.log("%c aosInitiate Error: " + err + ".", errorStyles);
-}
-
-
-
-
-/* Slick Slider
------------------------------------------------ */
-function slickInitiate() {
-    if (jQuery('.slick-slider')) {
-        jQuery('.slick-slider').each(function () {
-            var slider = jQuery(this);
-            if (slider.children().length > 1) {
-                slider.slick({
-                    arrows: true,
-                    dots: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 4000,
-                    speed: 1000,
-                    fade: true,
-                    infinite: true,
-                    loop: true,
-                });
-            }
-        });
+window.addEventListener('load', function () {
+    try {
+        slickInitiate();
+    } catch (err) {
+        console.log("%c slickInitiate Error: " + err + ".", errorStyles);
     }
+
+    try {
+        aosInitiate();
+    } catch (err) {
+        console.log("%c aosInitiate Error: " + err + ".", errorStyles);
+    }
+});
+
+
+/**
+ * Slick Slider
+ */
+function slickInitiate() {
+    jQuery(document).ready(function () {
+        if (jQuery('.slick-slider')) {
+            jQuery('.slick-slider').each(function () {
+                var slider = jQuery(this);
+                if (slider.children().length > 1) {
+                    slider.slick({
+                        arrows: true,
+                        dots: true,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        autoplay: true,
+                        autoplaySpeed: 4000,
+                        speed: 1000,
+                        fade: true,
+                        infinite: true,
+                        loop: true,
+                    });
+                }
+            });
+        }
+    });
 }
 
-/* AOS
------------------------------------------------ */
+
+/**
+ * AOS
+ */
 function aosInitiate() {
     //Must be initiated after slick if there are animations in the slider
     if (typeof AOS != "undefined") {
