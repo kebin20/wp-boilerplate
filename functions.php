@@ -74,8 +74,9 @@ function gutenbase_content_width()
 }
 add_action('after_setup_theme', 'gutenbase_content_width', 0);
 
+
+
 /* Custom Code
-これからは　カスタムファンクション
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 /* Move jQuery to footer
 ----------------------------------------------- */
@@ -86,6 +87,7 @@ function move_jquery_to_footer()
     wp_scripts()->add_data('jquery-migrate', 'group', 1);
 }
 add_action('wp_enqueue_scripts', 'move_jquery_to_footer');
+
 
 /* Queueing for Header scripts and styles.
 ----------------------------------------------- */
@@ -216,49 +218,6 @@ if (function_exists('acf_add_options_page')) {
 }
 
 
-/* Function for retrieving top parent ID
-一番上の親のIDをえるファンクション
-http://www.stevendobbelaere.be/get-the-current-pages-parent-page-id-in-wordpress/
------------------------------------------------ */
-function get_top_parent_page_id()
-{
-    global $post;
-    if ($post->ancestors) {
-        return end($post->ancestors);
-    } else {
-        return $post->ID;
-    }
-}
-
-
-/* Overide default <title>
------------------------------------------------ */
-function override_title($title_parts)
-{
-    if (is_404()) {
-        $title_parts['title'] = 'ページが見つかりません';
-    }
-    return $title_parts;
-}
-add_filter('document_title_parts', 'override_title');
-
-
-/* Retrieve page URL using slug
-ページスラグで URLを得るファンクション
------------------------------------------------ */
-function get_url_by_slug($page_slug)
-{
-    $page = get_page_by_path($page_slug);
-    if ($page) {
-        $pageID = $page->ID;
-        return get_page_link($pageID);
-    } else {
-        echo 'Page not found';
-        return null;
-    }
-}
-
-
 /* Dequeue loading of default Gutenburg stylesheet (for sites using legacy editors)
 ----------------------------------------------- */
 function remove_wp_block_library_css()
@@ -297,3 +256,47 @@ function add_browser_type_to_body_classes($classes)
     return $classes;
 }
 add_filter('body_class', 'add_browser_type_to_body_classes');
+
+
+
+/* Function for retrieving top parent ID
+一番上の親のIDをえるファンクション
+http://www.stevendobbelaere.be/get-the-current-pages-parent-page-id-in-wordpress/
+----------------------------------------------- */
+// function get_top_parent_page_id()
+// {
+//     global $post;
+//     if ($post->ancestors) {
+//         return end($post->ancestors);
+//     } else {
+//         return $post->ID;
+//     }
+// }
+
+
+/* Overide default <title>
+----------------------------------------------- */
+// function override_title($title_parts)
+// {
+//     if (is_404()) {
+//         $title_parts['title'] = 'ページが見つかりません';
+//     }
+//     return $title_parts;
+// }
+// add_filter('document_title_parts', 'override_title');
+
+
+/* Retrieve page URL using slug
+ページスラグで URLを得るファンクション
+----------------------------------------------- */
+// function get_url_by_slug($page_slug)
+// {
+//     $page = get_page_by_path($page_slug);
+//     if ($page) {
+//         $pageID = $page->ID;
+//         return get_page_link($pageID);
+//     } else {
+//         echo 'Page not found';
+//         return null;
+//     }
+// }
