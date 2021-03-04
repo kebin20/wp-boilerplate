@@ -13,14 +13,14 @@ const isHome = document.body.classList.contains("home");
 window.addEventListener('load', function () {
     try {
         slickInitiate();
-    } catch (err) {
-        console.log("%c slickInitiate Error: " + err + ".", errorStyles);
+    } catch (e) {
+        console.error("slickInitiate Error: ", e.stack);
     }
 
     try {
         aosInitiate();
-    } catch (err) {
-        console.log("%c aosInitiate Error: " + err + ".", errorStyles);
+    } catch (e) {
+        console.error("aosInitiate Error: ", e.stack);
     }
 });
 
