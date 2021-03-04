@@ -38,23 +38,23 @@ function buildStyles() {
         .pipe(browsersync.reload({ stream: true }));
 }
 
-// Refresh page on site-init.js change
+// Refresh page on index.js change
 function watchBabel() {
     return watch(
-        ['js/site-init.js'],
+        ['js/index.js'],
         { events: 'all', ignoreInitial: true },
         series(buildBabel)
     );
 }
 
-// Compile site-init.js with Babel.
+// Compile index.js with Babel.
 function buildBabel() {
-    return src('js/site-init.js')
+    return src('js/index.js')
         // .pipe(sourcemaps.init())
         .pipe(babel({
             presets: ['@babel/preset-env']
         }))
-        .pipe(concat('site-init-ie.js'))
+        .pipe(concat('index-ie.js'))
         // .pipe(sourcemaps.write('.'))
         .pipe(dest('js'))
         .pipe(browsersync.reload({ stream: true }));
@@ -63,7 +63,7 @@ function buildBabel() {
 // Refresh page on JS change
 function watchJS() {
     return watch(
-        ['*.js', '**/*.js', '!js/site-init.js'], // Watching everything but site-init
+        ['*.js', '**/*.js', '!js/index.js'], // Watching everything but index.js
         { events: 'all', ignoreInitial: true },
         function (done) {
             browsersync.reload();
