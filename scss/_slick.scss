@@ -189,7 +189,7 @@
     $dot-size: 3rem;
 
     position: absolute;
-    z-index: 1001;
+    z-index: $zindex-slick;
     bottom: 3rem;
     display: block;
     width: 100%;
