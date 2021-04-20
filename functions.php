@@ -300,3 +300,19 @@ http://www.stevendobbelaere.be/get-the-current-pages-parent-page-id-in-wordpress
 //         return null;
 //     }
 // }
+
+/* Admin Area Custom CSS
+----------------------------------------------- */
+// add_action('admin_head', 'my_admin_area_custom_css');
+// function my_admin_area_custom_css()
+// {
+//     echo '
+//         <style>
+//             #adminmenu #menu-posts,
+//             #adminmenu #menu-comments /* Hide "Comments" menu item */
+//             {
+//                 display:none;
+//             }
+//     </style>
+//     ';
+// }
