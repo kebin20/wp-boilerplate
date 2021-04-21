@@ -11,5 +11,9 @@
 get_header();
 ?>
 
+
+<div id="js-page-banner" class="hero"></div>
+
+
 <?php
 get_footer();

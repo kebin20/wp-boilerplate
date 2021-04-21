@@ -18,11 +18,88 @@ window.addEventListener('load', function () {
     }
 
     try {
+        stickyHeaderInitiate();
+    } catch (e) {
+        console.error("stickyHeaderInitiate Error: ", e.stack);
+    }
+
+    try {
+        mobNaviInitiate();
+    } catch (e) {
+        console.error("mobNaviInitiate Error: ", e.stack);
+    }
+
+    try {
         aosInitiate();
     } catch (e) {
         console.error("aosInitiate Error: ", e.stack);
     }
 });
+
+
+
+/**
+ * Debouncer
+ */
+function debounce(func, wait = 20, immediate = true) {
+    var timeout;
+    return function () {
+        var context = this, args = arguments;
+        var later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+};
+
+
+
+/**
+ * Sticky Header
+ */
+function stickyHeaderInitiate() {
+    const pageBannerEl = document.getElementById('js-page-banner');
+
+    function checkStickyScroll() {
+        let bannerBottom = pageBannerEl.offsetTop + pageBannerEl.offsetHeight;
+        console.log('is checking 2');
+
+        if (window.pageYOffset > bannerBottom) {
+            document.documentElement.classList.add('js-scrolled');
+        } else {
+            document.documentElement.classList.remove('js-scrolled');
+        }
+    }
+
+    window.addEventListener('scroll', debounce(checkStickyScroll, 5));
+}
+
+
+/**
+ * Mobile Navigation Logic
+ */
+function mobNaviInitiate() {
+    const mobNaviOpenEl = document.getElementById('js-navi-open');
+    mobNaviOpenEl.addEventListener('click', openNavi);
+
+    const mobNaviCloseEl = document.getElementById('js-navi-close');
+    mobNaviCloseEl.addEventListener('click', closeNavi);
+    document.querySelectorAll('.mob-navi__wrap a').forEach((element) => {
+        element.addEventListener('click', closeNavi);
+    });
+
+    function openNavi() {
+        document.documentElement.classList.add('js-navi-open');
+    }
+
+    function closeNavi() {
+        document.documentElement.classList.remove('js-navi-open');
+    }
+}
 
 
 /**
