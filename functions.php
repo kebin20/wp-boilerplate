@@ -96,24 +96,24 @@ remove_action('wp_print_styles', 'print_emoji_styles'); // Emoji に関するフ
 remove_action('wp_head', 'print_emoji_detection_script', 7); // Emoji に関するファイルを読み込まないように
 function gutenbase_enqueue_assets()
 {
-    //If IE, load polyfills
-    global $is_IE;
-    if ($is_IE) :
-        // Object Fit
-        wp_register_script('ofi-script', get_template_directory_uri() . '/vendor/polyfills/ofi.min.js', array(), false, true); //load into footer
-        wp_enqueue_script('ofi-script');
-        // CSS variables
-        wp_register_script('css-variables-script', get_template_directory_uri() . '/vendor/polyfills/css-vars-ponyfill.min.js', array(), false, true); //load into footer
-        wp_enqueue_script('css-variables-script');
-        // Classlist
-        wp_register_script('classlist-script', get_template_directory_uri() . '/vendor/polyfills/classlist.js', array(), false, true); //load into footer
-        wp_enqueue_script('classlist-script');
-        // NodeList forEach
-        wp_register_script('nodelist-foreach-script', get_template_directory_uri() . '/vendor/polyfills/nodelist-foreach.js', array(), false, true); //load into footer
-        wp_enqueue_script('nodelist-foreach-script');
-    endif;
-
     if (!is_admin()) {
+        //If IE, load polyfills
+        global $is_IE;
+        if ($is_IE) :
+            // Object Fit
+            wp_register_script('ofi-script', get_template_directory_uri() . '/vendor/polyfills/ofi.min.js', array(), false, true); //load into footer
+            wp_enqueue_script('ofi-script');
+            // CSS variables
+            wp_register_script('css-variables-script', get_template_directory_uri() . '/vendor/polyfills/css-vars-ponyfill.min.js', array(), false, true); //load into footer
+            wp_enqueue_script('css-variables-script');
+            // Classlist
+            wp_register_script('classlist-script', get_template_directory_uri() . '/vendor/polyfills/classlist.js', array(), false, true); //load into footer
+            wp_enqueue_script('classlist-script');
+            // NodeList forEach
+            wp_register_script('nodelist-foreach-script', get_template_directory_uri() . '/vendor/polyfills/nodelist-foreach.js', array(), false, true); //load into footer
+            wp_enqueue_script('nodelist-foreach-script');
+        endif;
+
         //== DEFAULT JS
         wp_enqueue_script('jquery');
 
