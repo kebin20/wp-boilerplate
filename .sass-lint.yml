@@ -36,10 +36,7 @@ rules:
     - 2
     -
       style: uppercase
-  # indentation:
-  #   - 0
-  #   -
-  #     size: 4
+  indentation: 0
   property-sort-order: 0
   pseudo-element: 0
   quotes:
