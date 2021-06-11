@@ -1,20 +1,22 @@
 /**
  * Theme Name: Gutenbase
  * Author: Sean Verity
- * 
+ *
  * Insert code to be loaded last here. jQuery has been loaded by the time this script is called.
  */
-const errorStyles = 'color: red';
-const isMobile = document.body.classList.contains("is-mobile") || window.matchMedia("(max-width: 900px)").matches;
+const errorStyles = "color: red";
+const isMobile =
+    document.body.classList.contains("is-mobile") ||
+    window.matchMedia("(max-width: 900px)").matches;
 const isHome = document.body.classList.contains("home");
 
 /* Launch Site
 ----------------------------------------------- */
-window.addEventListener('load', function () {
+window.addEventListener("load", function () {
     try {
-        slickInitiate();
+        initCSSVars();
     } catch (e) {
-        console.error("slickInitiate Error: ", e.stack);
+        console.error("initCSSVars Error: ", e.stack);
     }
 
     try {
@@ -30,13 +32,25 @@ window.addEventListener('load', function () {
     }
 
     try {
+        slickInitiate();
+    } catch (e) {
+        console.error("slickInitiate Error: ", e.stack);
+    }
+
+    try {
         aosInitiate();
     } catch (e) {
         console.error("aosInitiate Error: ", e.stack);
     }
 });
 
-
+/**
+ * Init CSS Vars
+ */
+function initCSSVars() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+}
 
 /**
  * Debouncer
@@ -44,7 +58,8 @@ window.addEventListener('load', function () {
 function debounce(func, wait = 20, immediate = true) {
     var timeout;
     return function () {
-        var context = this, args = arguments;
+        var context = this,
+            args = arguments;
         var later = function () {
             timeout = null;
             if (!immediate) func.apply(context, args);
@@ -54,61 +69,57 @@ function debounce(func, wait = 20, immediate = true) {
         timeout = setTimeout(later, wait);
         if (callNow) func.apply(context, args);
     };
-};
-
-
+}
 
 /**
  * Sticky Header
  */
 function stickyHeaderInitiate() {
-    const pageBannerEl = document.getElementById('js-page-banner');
+    const pageBannerEl = document.getElementById("js-page-banner");
 
     function checkStickyScroll() {
         let bannerBottom = pageBannerEl.offsetTop + pageBannerEl.offsetHeight;
-        console.log('is checking 2');
+        console.log("is checking 2");
 
         if (window.pageYOffset > bannerBottom) {
-            document.documentElement.classList.add('js-scrolled');
+            document.documentElement.classList.add("js-scrolled");
         } else {
-            document.documentElement.classList.remove('js-scrolled');
+            document.documentElement.classList.remove("js-scrolled");
         }
     }
 
-    window.addEventListener('scroll', debounce(checkStickyScroll, 5));
+    window.addEventListener("scroll", debounce(checkStickyScroll, 5));
 }
-
 
 /**
  * Mobile Navigation Logic
  */
 function mobNaviInitiate() {
-    const mobNaviOpenEl = document.getElementById('js-navi-open');
-    mobNaviOpenEl.addEventListener('click', openNavi);
+    const mobNaviOpenEl = document.getElementById("js-navi-open");
+    mobNaviOpenEl.addEventListener("click", openNavi);
 
-    const mobNaviCloseEl = document.getElementById('js-navi-close');
-    mobNaviCloseEl.addEventListener('click', closeNavi);
-    document.querySelectorAll('.mob-navi__wrap a').forEach((element) => {
-        element.addEventListener('click', closeNavi);
+    const mobNaviCloseEl = document.getElementById("js-navi-close");
+    mobNaviCloseEl.addEventListener("click", closeNavi);
+    document.querySelectorAll(".mob-navi__wrap a").forEach((element) => {
+        element.addEventListener("click", closeNavi);
     });
 
     function openNavi() {
-        document.documentElement.classList.add('js-navi-open');
+        document.documentElement.classList.add("js-navi-open");
     }
 
     function closeNavi() {
-        document.documentElement.classList.remove('js-navi-open');
+        document.documentElement.classList.remove("js-navi-open");
     }
 }
-
 
 /**
  * Slick Slider
  */
 function slickInitiate() {
     jQuery(document).ready(function () {
-        if (jQuery('.slick-slider')) {
-            jQuery('.slick-slider').each(function () {
+        if (jQuery(".slick-slider")) {
+            jQuery(".slick-slider").each(function () {
                 var slider = jQuery(this);
                 if (slider.children().length > 1) {
                     slider.slick({
@@ -129,7 +140,6 @@ function slickInitiate() {
     });
 }
 
-
 /**
  * AOS
  */
@@ -139,7 +149,7 @@ function aosInitiate() {
         AOS.init({
             delay: 0, // values from 0 to 3000, with step 50ms
             duration: 1000, // values from 0 to 3000, with step 50ms
-            easing: 'ease', // default easing for AOS animations
+            easing: "ease", // default easing for AOS animations
             once: true, // whether animation should happen only once - while scrolling down
         });
     }
