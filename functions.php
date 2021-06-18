@@ -258,6 +258,48 @@ function add_browser_type_to_body_classes($classes)
 add_filter('body_class', 'add_browser_type_to_body_classes');
 
 
+/* Contact Form 7
+----------------------------------------------- */
+/**
+ * Stop <p> & <br> auto-generation
+ */
+// add_filter('wpcf7_autop_or_not', '__return_false');
+
+/**
+ * Front-end Spam protection (validation)
+ */
+// function wpcf7_validate_anti_spam_message_name($result, $tag)
+// {
+//     $value = str_replace(array(PHP_EOL, ' '), '', esc_attr($_POST['your-name']));
+//     if (!empty($value)) {
+//         if (!preg_match("/^[ぁ-んァ-ヶ一-龠々+ー+]+$/u", $value)) {
+//             $result['valid'] = false;
+//             $result['reason'] = array('your-name' => 'お名前は日本語で入力してください');
+//         }
+//     }
+//     return $result;
+// }
+// add_filter('wpcf7_validate', 'wpcf7_validate_anti_spam_message_name', 10, 2);
+
+/**
+ * Back-end Spam protection (filter)
+ */
+// add_filter('wpcf7_spam', function ($spam) {
+//     if ($spam) {
+//         return $spam;
+//     }
+
+//     $value = $_POST['your-name'];
+//     if (!empty($value)) {
+//         if (!preg_match("/^[ぁ-んァ-ヶ一-龠々+ー+]+$/u", $value)) {
+//             $spam = true;
+//         }
+//     }
+
+//     return $spam;
+// }, 10, 1);
+
+
 
 /* Function for retrieving top parent ID
 一番上の親のIDをえるファンクション
