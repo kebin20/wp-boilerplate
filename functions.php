@@ -267,6 +267,7 @@ add_filter('body_class', 'add_browser_type_to_body_classes');
 
 /**
  * Front-end Spam protection (validation)
+ * https://wp-labo.com/contact-form-7-spam-mail-shutout/
  */
 // function wpcf7_validate_anti_spam_message_name($result, $tag)
 // {
