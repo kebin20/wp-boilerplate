@@ -1,7 +1,7 @@
 # File Configuration
 files:
   ignore:
-    - 'scss/_wysiwyg.scss'
+    - 'scss/_prose.scss'
     - 'scss/_generic.scss'
 
 # Rule Configuration
