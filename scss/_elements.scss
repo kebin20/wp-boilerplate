@@ -1,5 +1,6 @@
 :root {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 
     --vh: 1vh; // Will be overwritten
 }
@@ -14,7 +15,6 @@ body {
     line-height: 1.6;
     color: $c-text;
     background: $c-white;
-    scroll-behavior: smooth;
     overflow-anchor: auto;
 }
 
