@@ -4,7 +4,7 @@
  *
  * Insert code to be loaded last here. jQuery has been loaded by the time this script is called.
  */
-const errorStyles = "color: red";
+
 const isMobile =
     document.body.classList.contains("is-mobile") ||
     window.matchMedia("(max-width: 900px)").matches;
@@ -79,7 +79,6 @@ function stickyHeaderInitiate() {
 
     function checkStickyScroll() {
         let bannerBottom = pageBannerEl.offsetTop + pageBannerEl.offsetHeight;
-        console.log("is checking 2");
 
         if (window.pageYOffset > bannerBottom) {
             document.documentElement.classList.add("js-scrolled");
