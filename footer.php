@@ -1,11 +1,9 @@
 <?php
 
 /**
- * Theme Name: Gutenbase
+ * Theme Name: Boilerplate
  * Author: Sean Verity
- * Text Domain: gutenbase
- * Domain Path: /languages/
- * @package gutenbase
+ * @package boilerplate
  */
 
 ?>

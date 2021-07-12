@@ -1,8 +1,8 @@
 /**
- * Theme Name: Gutenbase
+ * Theme Name: Boilerplate
  * Author: Sean Verity
- *
- * Insert code to be loaded last here. jQuery has been loaded by the time this script is called.
+ * – Insert code to be loaded last here.
+ * – jQuery has been loaded by the time this script is called.
  */
 
 const isMobile =
@@ -20,9 +20,9 @@ window.addEventListener("load", function () {
     }
 
     try {
-        stickyHeaderInitiate();
+        desktopHeaderInitiate();
     } catch (e) {
-        console.error("stickyHeaderInitiate Error: ", e.stack);
+        console.error("desktopHeaderInitiate Error: ", e.stack);
     }
 
     try {
@@ -53,28 +53,9 @@ function initCSSVars() {
 }
 
 /**
- * Debouncer
- */
-function debounce(func, wait = 20, immediate = true) {
-    var timeout;
-    return function () {
-        var context = this,
-            args = arguments;
-        var later = function () {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        };
-        var callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-    };
-}
-
-/**
  * Sticky Header
  */
-function stickyHeaderInitiate() {
+function desktopHeaderInitiate() {
     const pageBannerEl = document.getElementById("js-page-banner");
 
     function checkStickyScroll() {
@@ -152,4 +133,25 @@ function aosInitiate() {
             once: true, // whether animation should happen only once - while scrolling down
         });
     }
+}
+
+/* Helpers
+----------------------------------------------- */
+/**
+ * Debouncer
+ */
+ function debounce(func, wait = 20, immediate = true) {
+    var timeout;
+    return function () {
+        var context = this,
+            args = arguments;
+        var later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
 }

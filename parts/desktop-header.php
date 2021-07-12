@@ -1,22 +1,20 @@
 <?php
 
 /**
-* Theme Name: Gutenbase
-* Author: Sean Verity
-* Text Domain: gutenbase
-* Domain Path: /languages/
-* @package gutenbase
+ * Theme Name: Boilerplate
+ * Author: Sean Verity
+ * @package boilerplate
  */
 
 $type_string = $args['type'] ?? null;
 $is_sticky = $type_string === 'sticky' ? true : false;
 ?>
 
-<header class="desk-head desk-head--<?= $type_string ?>">
+<header class="c-desk-head c-desk-head--<?= $type_string ?>">
 
-    <div class="desk-head__wrap">
+    <div class="c-desk-head__wrap">
         <?php if ($is_sticky) : ?>
-            <a class="desk-head__item" href="<?= bloginfo('url'); ?>/#">
+            <a class="c-desk-head__logo" href="<?= bloginfo('url'); ?>/#">
                 <img src="<?= get_template_directory_uri() ?>/img/logo.svg">
             </a>
         <?php endif; ?>

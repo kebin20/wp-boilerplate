@@ -1,18 +1,16 @@
 <?php
 
 /**
- * Theme Name: Gutenbase
+ * Theme Name: Boilerplate
  * Author: Sean Verity
- * Text Domain: gutenbase
- * Domain Path: /languages/
- * @package gutenbase
+ * @package boilerplate
  */
 
 get_header();
 ?>
 
 
-<div id="js-page-banner" class="hero"></div>
+<div id="js-page-banner" class="t-hero"></div>
 
 
 <?php

@@ -1,12 +1,12 @@
 {
-    "name": "gutenbase_gulpfile",
-    "description": "Gulpfile for building the Gutenbase theme",
+    "name": "boilerplate_gulpfile",
+    "description": "Gulpfile for building the Boilerplate theme",
     "author": {
         "name": "Sean Verity"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/veritasnz/gutenbase"
+        "url": "https://github.com/veritasnz/boilerplate"
     },
     "license": "MIT",
     "dependencies": {

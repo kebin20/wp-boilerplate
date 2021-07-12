@@ -1,14 +1,14 @@
-// Requires Gulp v4.
-// $ npm uninstall --global gulp gulp-cli
-// $ rm /usr/local/share/man/man1/gulp.1
-// $ npm install --global gulp-cli
-// $ npm install
+/**
+ * Theme Name: Boilerplate
+ * Author: Sean Verity
+ * Notes: REQUIRES GULP 4
+ */
+
 const { src, dest, watch, series, parallel } = require("gulp");
 const concat = require("gulp-concat");
 const browsersync = require("browser-sync").create();
 const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
-//const sourcemaps = require('gulp-sourcemaps');
 const plumber = require("gulp-plumber");
 const sasslint = require("gulp-sass-lint");
 const babel = require("gulp-babel");
@@ -16,8 +16,9 @@ const cache = require("gulp-cached");
 const notify = require("gulp-notify");
 const beeper = require("beeper");
 
-// Watch changes on all *.scss files, lint them and
-// trigger buildStyles() at the end.
+/**
+ * Watch Styles – Lint and trigger buildStyles()
+ */
 function watchStyles() {
     watch(
         ["scss/*.scss", "scss/**/*.scss"],
@@ -26,21 +27,21 @@ function watchStyles() {
     );
 }
 
-// Compile CSS from Sass.
+/**
+ * Compile CSS from Sass
+ */
 function buildStyles() {
-    return (
-        src("scss/style.scss")
-            .pipe(plumbError()) // Global error handler through all pipes.
-            //.pipe(sourcemaps.init())
-            .pipe(sass({ outputStyle: "expanded", indentWidth: 4 })) //Expanded for dev.
-            .pipe(autoprefixer({ grid: "autoplace" }))
-            //.pipe(sourcemaps.write())
-            .pipe(dest("."))
-            .pipe(browsersync.reload({ stream: true }))
-    );
+    return src("scss/style.scss")
+        .pipe(plumbError()) // Global error handler through all pipes.
+        .pipe(sass({ outputStyle: "expanded", indentWidth: 4 })) //Expanded for dev.
+        .pipe(autoprefixer({ grid: "autoplace" }))
+        .pipe(dest("."))
+        .pipe(browsersync.reload({ stream: true }));
 }
 
-// Refresh page on index.js change
+/**
+ * Refresh page on index.js change
+ */
 function watchBabel() {
     return watch(
         ["js/index.js"],
@@ -49,24 +50,24 @@ function watchBabel() {
     );
 }
 
-// Compile index.js with Babel.
+/**
+ * Compile index.js with Babel
+ */
 function buildBabel() {
-    return (
-        src("js/index.js")
-            // .pipe(sourcemaps.init())
-            .pipe(
-                babel({
-                    presets: ["@babel/preset-env"],
-                })
-            )
-            .pipe(concat("index-ie.js"))
-            // .pipe(sourcemaps.write('.'))
-            .pipe(dest("js"))
-            .pipe(browsersync.reload({ stream: true }))
-    );
+    return src("js/index.js")
+        .pipe(
+            babel({
+                presets: ["@babel/preset-env"],
+            })
+        )
+        .pipe(concat("index-ie.js"))
+        .pipe(dest("js"))
+        .pipe(browsersync.reload({ stream: true }));
 }
 
-// Refresh page on JS change
+/**
+ * Refresh page on JS change
+ */
 function watchJS() {
     return watch(
         ["*.js", "**/*.js", "!js/index.js"], // Watching everything but index.js
@@ -78,7 +79,9 @@ function watchJS() {
     );
 }
 
-// Refresh page on PHP change
+/**
+ * Refresh page on PHP change
+ */
 function watchPHP() {
     return watch(
         ["*.php", "**/*.php"],
@@ -90,10 +93,12 @@ function watchPHP() {
     );
 }
 
-// Init BrowserSync.
+/**
+ * BrowserSync
+ */
 function browserSync(done) {
     browsersync.init({
-        proxy: "localhost:3000/gutenbase-wp/", // Change this value to match your local URL.
+        proxy: "localhost:3000/boilerplate-wp/", // Change this value to match your local URL.
         browser: "google chrome",
         open: "external",
         // host : '192.168.3.254' // In case of static IP
@@ -101,7 +106,9 @@ function browserSync(done) {
     done();
 }
 
-// Init Sass linter.
+/**
+ * Lint SASS
+ */
 function sassLint() {
     return src(["scss/*.scss", "scss/**/*.scss"])
         .pipe(cache("sasslint"))
@@ -114,7 +121,9 @@ function sassLint() {
     //.pipe(sasslint.failOnError()); //no failure on SASS Linting error
 }
 
-// Error handler.
+/**
+ * Handle Errors
+ */
 function plumbError() {
     return plumber({
         errorHandler: function (err) {
@@ -131,13 +140,21 @@ function plumbError() {
     });
 }
 
-// Export commands.
+/**
+ * Export commands
+ */
+
+// $ gulp
 exports.default = series(
     browserSync,
     parallel(watchStyles, watchPHP, watchJS, watchBabel)
-); // $ gulp
+);
+
+// $ gulp watch
 exports.watch = series(
     browserSync,
     parallel(watchStyles, watchPHP, watchJS, watchBabel)
-); // $ gulp watch
-exports.build = series(buildStyles, buildBabel); // $ gulp build
+);
+
+// $ gulp build
+exports.build = series(buildStyles, buildBabel);

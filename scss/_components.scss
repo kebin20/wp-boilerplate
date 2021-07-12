@@ -1,6 +1,23 @@
-/* Hero
+/* Desktop Header
 ----------------------------------------------- */
-.hero {
-    width: 100%;
-    height: calc(var(--vh) * 100);
+.c-desk-head {
+    &--sticky {}
+
+    &--fixed {}
+
+    &__wrap {}
+
+    &__logo {}
+}
+
+/* Mobile Navi
+----------------------------------------------- */
+.c-mob-logo {}
+
+.c-mob-hamburger {}
+
+.c-mob-navi {
+    &__close {}
+
+    &__wrap {}
 }

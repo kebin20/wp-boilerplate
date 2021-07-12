@@ -1,14 +1,12 @@
 <?php
 
 /**
- * Theme Name: Gutenbase
+ * Theme Name: Boilerplate
  * Author: Sean Verity
- * Text Domain: gutenbase
- * Domain Path: /languages/
- * @package gutenbase
+ * @package boilerplate
  */
 
-if (!function_exists('gutenbase_setup')) :
+if (!function_exists('boilerplate_setup')) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.
      *
@@ -16,7 +14,7 @@ if (!function_exists('gutenbase_setup')) :
      * runs before the init hook. The init hook is too late for some features, such
      * as indicating support for post thumbnails.
      */
-    function gutenbase_setup()
+    function boilerplate_setup()
     {
 
         // Add default posts and comments RSS feed links to head.
@@ -52,11 +50,11 @@ if (!function_exists('gutenbase_setup')) :
         ));
 
         // Setup text-domain for translation
-        load_theme_textdomain('gutenbase', get_template_directory() . '/languages');
+        load_theme_textdomain('boilerplate', get_template_directory() . '/languages');
     }
 endif;
 
-add_action('after_setup_theme', 'gutenbase_setup');
+add_action('after_setup_theme', 'boilerplate_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -65,18 +63,18 @@ add_action('after_setup_theme', 'gutenbase_setup');
  *
  * @global int $content_width
  */
-function gutenbase_content_width()
+function boilerplate_content_width()
 {
     // This variable is intended to be overruled from themes.
     // Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
     // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-    $GLOBALS['content_width'] = apply_filters('gutenbase_content_width', 640);
+    $GLOBALS['content_width'] = apply_filters('boilerplate_content_width', 640);
 }
-add_action('after_setup_theme', 'gutenbase_content_width', 0);
+add_action('after_setup_theme', 'boilerplate_content_width', 0);
 
 
 
-/* Custom Code
+/* Base Custom Code
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 /* Move jQuery to footer
 ----------------------------------------------- */
@@ -94,10 +92,11 @@ add_action('wp_enqueue_scripts', 'move_jquery_to_footer');
 add_filter('wpcf7_load_css', '__return_false'); // Remove Contact Form 7 CSS
 remove_action('wp_print_styles', 'print_emoji_styles'); // Emoji に関するファイルを読み込まないように
 remove_action('wp_head', 'print_emoji_detection_script', 7); // Emoji に関するファイルを読み込まないように
-function gutenbase_enqueue_assets()
+
+function boilerplate_enqueue_assets()
 {
     if (!is_admin()) {
-        //If IE, load polyfills
+        //If IE, load IE-specific polyfills
         global $is_IE;
         if ($is_IE) :
             // Object Fit
@@ -158,7 +157,7 @@ function gutenbase_enqueue_assets()
         endif;
     }
 }
-add_action('wp_enqueue_scripts', 'gutenbase_enqueue_assets', 1); //load before block editor
+add_action('wp_enqueue_scripts', 'boilerplate_enqueue_assets', 1); //load before block editor
 
 
 /* Script Preloader.
@@ -258,6 +257,8 @@ function add_browser_type_to_body_classes($classes)
 add_filter('body_class', 'add_browser_type_to_body_classes');
 
 
+/* Optional Custom Code
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
 /* Contact Form 7
 ----------------------------------------------- */
 /**

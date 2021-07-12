@@ -2,7 +2,7 @@
     font-size: 62.5%;
     scroll-behavior: smooth;
 
-    --vh: 1vh; // Will be overwritten
+    --vh: 1vh; // Will be updated by index.js/initCSSVars()
 }
 
 body {
