@@ -21,38 +21,40 @@ www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528
 
 @charset 'UTF-8';
 
-
 // Variables
 //################################### */
-@import 'settings';
+@import "settings";
 
 // Mixins / Functions
 //################################### */
-@import 'tools';
+@import "tools";
 
-/* Generic / レセット
+/* Generic / Reset
 ##################################### */
-@import 'generic';
+@import "generic";
 
 /* Elements
 ##################################### */
-@import 'elements';
+@import "elements";
 
 /* Objects
 ##################################### */
-@import 'utilities';
-@import 'objects';
-@import 'prose';
-@import 'slick';
-@import 'form';
+@import "prose";
+@import "slick";
+@import "form";
+@import "objects";
+
+/* Utilities
+##################################### */
+@import "utilities";
 
 /* Components
 ##################################### */
-@import 'components';
+@import "components";
 
 /* Trumps
 ##################################### */
-@import 'trumps';
+@import "trumps";
 
 /* No [alt] test */
 // img:not([alt]):not([aria-hidden="true"]) {
