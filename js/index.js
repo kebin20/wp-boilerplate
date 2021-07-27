@@ -13,6 +13,12 @@ const isHome = document.body.classList.contains("home");
 /* Launch Site
 ----------------------------------------------- */
 window.addEventListener("load", function () {
+    window.onresize = () => {
+        isMobile =
+            document.body.classList.contains("is-mobile") ||
+            window.matchMedia("(max-width: 900px)").matches;
+    };
+
     try {
         initCSSVars();
     } catch (e) {
