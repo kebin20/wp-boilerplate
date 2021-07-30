@@ -204,13 +204,6 @@ if (function_exists('acf_add_options_page')) {
         'capability'    => 'edit_posts',
         'redirect'        => false
     ));
-    acf_add_options_page(array(
-        'page_title'     => 'トップページ設定',
-        'menu_title'    => 'トップページ設定',
-        'menu_slug'     => 'top-settings',
-        'capability'    => 'edit_posts',
-        'redirect'        => false
-    ));
 }
 
 
