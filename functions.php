@@ -87,8 +87,8 @@ add_action('wp_enqueue_scripts', 'move_jquery_to_footer');
 /* Queueing for Header scripts and styles.
 ----------------------------------------------- */
 add_filter('wpcf7_load_css', '__return_false'); // Remove Contact Form 7 CSS
-remove_action('wp_print_styles', 'print_emoji_styles'); // Emoji に関するファイルを読み込まないように
-remove_action('wp_head', 'print_emoji_detection_script', 7); // Emoji に関するファイルを読み込まないように
+remove_action('wp_print_styles', 'print_emoji_styles'); // Remove default loading of emoji files
+remove_action('wp_head', 'print_emoji_detection_script', 7); // Remove default loading of emoji files
 
 function boilerplate_enqueue_assets()
 {
@@ -301,7 +301,6 @@ add_filter('body_class', 'add_browser_type_to_body_classes');
 
 
 /* Function for retrieving top parent ID
-一番上の親のIDをえるファンクション
 http://www.stevendobbelaere.be/get-the-current-pages-parent-page-id-in-wordpress/
 ----------------------------------------------- */
 // function get_top_parent_page_id()
@@ -328,7 +327,6 @@ http://www.stevendobbelaere.be/get-the-current-pages-parent-page-id-in-wordpress
 
 
 /* Retrieve page URL using slug
-ページスラグで URLを得るファンクション
 ----------------------------------------------- */
 // function get_url_by_slug($page_slug)
 // {
