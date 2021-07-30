@@ -48,9 +48,6 @@ if (!function_exists('boilerplate_setup')) :
             'gallery',
             'caption',
         ));
-
-        // Setup text-domain for translation
-        load_theme_textdomain('boilerplate', get_template_directory() . '/languages');
     }
 endif;
 
