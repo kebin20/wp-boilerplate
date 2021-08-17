@@ -2,14 +2,13 @@
 //----------------------------------------------- //
 @mixin object-fit-cover {
     object-fit: cover;
-    font-family: 'object-fit: cover;';
+    font-family: "object-fit: cover;";
 }
 
 @mixin object-fit-contain {
     object-fit: contain;
-    font-family: 'object-fit: contain;';
+    font-family: "object-fit: contain;";
 }
-
 
 // Graphics
 //----------------------------------------------- //
@@ -25,22 +24,25 @@
         0.075: 75.5%,
         0.037: 82.85%,
         0.019: 88%,
-        0: 100%
+        0: 100%,
     );
 
     @if type-of($color) != color {
         @return null;
     }
 
-    $rgba: '#{red($color)},#{green($color)},#{blue($color)}';
+    $rgba: "#{red($color)},#{green($color)},#{blue($color)}";
     $color-stops: ();
 
     @each $key, $value in $clothoid {
-        $color-stops: append($color-stops, unquote('rgba(#{$rgba}, #{$key * $opacity}) #{$value}'), 'comma');
+        $color-stops: append(
+            $color-stops,
+            unquote("rgba(#{$rgba}, #{$key * $opacity}) #{$value}"),
+            "comma"
+        );
     }
     @return $color-stops;
 }
-
 
 // Animations
 //----------------------------------------------- //
@@ -60,10 +62,9 @@
     }
 }
 
-
 // Selectors
 //----------------------------------------------- //
-@mixin more-than-n-els ($n: '4', $this: '*') {
+@mixin more-than-n-els($n: "4", $this: "*") {
     //css-tricks.com/extremely-handy-nth-child-recipes-sass-mixins/
     &:nth-last-child(#{$n}n + 4) {
         :first-child,
@@ -73,16 +74,15 @@
     }
 }
 
-@mixin last-n-els ($count: '4') {
+@mixin last-n-els($count: "4") {
     &:nth-last-child(-n + #{$count}) {
         @content;
     }
 }
 
-
 // Misc
 //----------------------------------------------- //
-@mixin fontawesome ($fontweight: 900) {
+@mixin fontawesome($fontweight: 900) {
     display: inline-block;
     font-weight: $fontweight;
     font-family: $ff-fontawesome;
