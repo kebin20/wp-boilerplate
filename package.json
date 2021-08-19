@@ -4,10 +4,6 @@
     "author": {
         "name": "Sean Verity"
     },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/veritasnz/boilerplate"
-    },
     "license": "MIT",
     "dependencies": {
         "@babel/core": "^7.12.10",
