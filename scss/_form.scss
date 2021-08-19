@@ -2,11 +2,11 @@
 ################################################################# */
 // sass-lint:disable nesting-depth force-attribute-nesting no-color-literals
 
-$error-red: #DC3232;
-$response-blue: #00A0D2;
-$accept-green: #46B450;
-$span-orange: #F56E28;
-$invalid-yellow: #FFB900;
+$error-red: #dc3232;
+$response-blue: #00a0d2;
+$accept-green: #46b450;
+$span-orange: #f56e28;
+$invalid-yellow: #ffb900;
 
 .wpcf7 {
     .screen-reader-response {
@@ -65,7 +65,7 @@ $invalid-yellow: #FFB900;
     .ajax-loader {
         visibility: hidden;
         display: inline-block;
-        background-image: url('../../plugins/contact-form-7/assets/ajax-loader.gif');
+        background-image: url("../../plugins/contact-form-7/assets/ajax-loader.gif");
         width: 16px;
         height: 16px;
         border: none;
@@ -86,7 +86,7 @@ $invalid-yellow: #FFB900;
         color: #888;
     }
 
-    input[type='file'] {
+    input[type="file"] {
         cursor: pointer;
 
         &:disabled {
@@ -130,6 +130,6 @@ $invalid-yellow: #FFB900;
 .wpcf7-list-item-label {
     &:before,
     &:after {
-        content: ' ';
+        content: " ";
     }
 }

@@ -49,7 +49,7 @@
     &:before,
     &:after {
         display: table;
-        content: '';
+        content: "";
     }
 
     &:after {
@@ -102,22 +102,25 @@
     display: none;
 }
 
-
 /* Slick Theme (slick-theme.css)
 ----------------------------------------------- */
 
 /* Slider */
 .slick-loading .slick-list {
-    background: $c-white url('vendor/slick/ajax-loader.gif') center center no-repeat;
+    background: $c-white url("vendor/slick/ajax-loader.gif") center center
+        no-repeat;
 }
 
 /* Icons */
 @font-face {
-    font-family: 'slick';
+    font-family: "slick";
     font-weight: normal;
     font-style: normal;
 
-    src: url('vendor/slick/fonts/slick.eot?#iefix') format('embedded-opentype'), url('vendor/slick/fonts/slick.woff') format('woff'), url('vendor/slick/fonts/slick.ttf') format('truetype'), url('vendor/slick/fonts/slick.svg#slick') format('svg');
+    src: url("vendor/slick/fonts/slick.eot?#iefix") format("embedded-opentype"),
+        url("vendor/slick/fonts/slick.woff") format("woff"),
+        url("vendor/slick/fonts/slick.ttf") format("truetype"),
+        url("vendor/slick/fonts/slick.svg#slick") format("svg");
 }
 
 /* Arrows */
@@ -159,7 +162,7 @@
     }
 
     &:before {
-        font-family: 'slick';
+        font-family: "slick";
         font-size: 20px;
         line-height: 1;
 
@@ -172,7 +175,7 @@
     left: -25px;
 
     &:before {
-        content: '←';
+        content: "←";
     }
 }
 
@@ -180,7 +183,7 @@
     right: -25px;
 
     &:before {
-        content: '→';
+        content: "→";
     }
 }
 
@@ -220,7 +223,6 @@
             background: transparent;
             color: $c-white;
 
-
             &:active,
             &:hover,
             &:focus {
@@ -233,7 +235,7 @@
             }
 
             &:before {
-                content: '•';
+                content: "•";
                 position: absolute;
                 top: 0;
                 left: 0;

@@ -26,7 +26,7 @@
         height: 1px;
         margin-bottom: 1.4em;
         margin-top: 1.4em;
-        background: #E6E6E6;
+        background: #e6e6e6;
         border: none;
     }
 
@@ -35,16 +35,16 @@
     }
 
     ins {
-        background-color: #0F0;
+        background-color: #0f0;
         text-decoration: none;
     }
 
     mark {
-        background-color: #FF0;
+        background-color: #ff0;
     }
 
     small {
-        font-size: .8em;
+        font-size: 0.8em;
     }
 
     strong {
@@ -53,7 +53,7 @@
 
     sub,
     sup {
-        font-size: .8em;
+        font-size: 0.8em;
     }
 
     sub {
@@ -100,14 +100,14 @@
 
     h1 {
         font-size: 2.4em;
-        margin-bottom: .58333em;
-        margin-top: .58333em;
+        margin-bottom: 0.58333em;
+        margin-top: 0.58333em;
         line-height: 1;
     }
 
     h2 {
         font-size: 1.6em;
-        margin-bottom: .875em;
+        margin-bottom: 0.875em;
         margin-top: 1.75em;
         line-height: 1.1;
     }
@@ -195,8 +195,8 @@
     }
 
     blockquote {
-        border-left: 4px solid #E6E6E6;
-        padding: .6em 1.2em;
+        border-left: 4px solid #e6e6e6;
+        padding: 0.6em 1.2em;
 
         p {
             margin-bottom: 0;
@@ -207,9 +207,9 @@
     kbd,
     samp,
     pre {
-        background-color: #F2F2F2;
+        background-color: #f2f2f2;
         color: #333;
-        font-size: .9em;
+        font-size: 0.9em;
     }
 
     code,
@@ -217,7 +217,7 @@
     samp {
         border-radius: 3px;
         line-height: 1.77778;
-        padding: .1em .4em .2em;
+        padding: 0.1em 0.4em 0.2em;
         vertical-align: baseline;
     }
 
@@ -246,8 +246,8 @@
     }
 
     figcaption {
-        font-size: .8em;
-        margin-top: .875em;
+        font-size: 0.8em;
+        margin-top: 0.875em;
     }
 
     table {
@@ -261,31 +261,31 @@
     th,
     td {
         font-size: 1em;
-        padding: .7em;
-        border: 1px solid #E6E6E6;
+        padding: 0.7em;
+        border: 1px solid #e6e6e6;
         line-height: 1.4;
     }
 
     thead,
     tfoot {
         tr {
-            background-color: #F5F5F5;
+            background-color: #f5f5f5;
         }
 
         th,
         td {
-            font-size: .9em;
-            padding: .77778em;
+            font-size: 0.9em;
+            padding: 0.77778em;
         }
 
         code {
-            background-color: #FFF;
+            background-color: #fff;
         }
     }
 
     tbody {
         tr {
-            background-color: #FFF;
+            background-color: #fff;
         }
     }
 }
