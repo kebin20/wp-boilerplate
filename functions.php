@@ -156,22 +156,6 @@ function boilerplate_enqueue_assets()
 }
 add_action('wp_enqueue_scripts', 'boilerplate_enqueue_assets', 1); //load before block editor
 
-
-/* Script Preloader.
-macarthur.me/posts/preloading-javascript-in-wordpress
------------------------------------------------ */
-add_action('wp_head', function () {
-    global $wp_scripts;
-    foreach ($wp_scripts->queue as $handle) {
-        $script = $wp_scripts->registered[$handle];
-        if ($script->src) {
-            $source = $script->src . ($script->ver ? "?ver={$script->ver}" : ""); // If version is set, append to end of source.
-            echo "<link rel='preload' href='{$source}' as='script'/>\n"; // Spit out the tag.
-        }
-    }
-}, 1);
-
-
 /* Script Defer/Async.
 wordpress.stackexchange.com/questions/359599/add-extra-parameter-in-script-tag-using-script-loader-tag
 ----------------------------------------------- */
