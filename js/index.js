@@ -5,7 +5,7 @@
  * – jQuery has been loaded by the time this script is called.
  */
 
-const isMobile =
+let isMobile =
     document.body.classList.contains("is-mobile") ||
     window.matchMedia("(max-width: 900px)").matches;
 const isHome = document.body.classList.contains("home");
