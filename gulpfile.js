@@ -5,7 +5,7 @@
  */
 
 const { src, dest, watch, series, parallel } = require("gulp");
-const concat = require("gulp-concat");
+const rename = require("gulp-rename");
 const browsersync = require("browser-sync").create();
 const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
@@ -53,16 +53,16 @@ function watchBabel() {
 /**
  * Compile index.js with Babel
  */
-function buildBabel() {
-    return src("js/index.js")
-        .pipe(
-            babel({
-                presets: ["@babel/preset-env"],
-            })
-        )
-        .pipe(concat("index-ie.js"))
-        .pipe(dest("js"))
-        .pipe(browsersync.reload({ stream: true }));
+ function buildBabel() {
+    return src(["js/*.js", "!js/*.ie.js"])
+    .pipe(
+        babel({
+            presets: ["@babel/preset-env"],
+        })
+    )
+    .pipe(rename({ suffix: ".ie" }))
+    .pipe(dest("js"))
+    .pipe(browsersync.reload({ stream: true }));
 }
 
 /**
