@@ -2,11 +2,11 @@
 ################################################################# */
 // sass-lint:disable nesting-depth force-attribute-nesting no-color-literals
 
-$error-red: #dc3232;
-$response-blue: #00a0d2;
-$accept-green: #46b450;
-$spam-orange: #f56e28;
-$invalid-yellow: #ffb900;
+$form-error-red: #dc3232;
+$form-response-blue: #00a0d2;
+$form-accept-green: #46b450;
+$form-spam-orange: #f56e28;
+$form-invalid-yellow: #ffb900;
 
 .wpcf7 {
     .screen-reader-response {
@@ -25,7 +25,7 @@ $invalid-yellow: #ffb900;
             .wpcf7-response-output {
                 margin: 2em 0.5em 1em;
                 padding: 0.2em 1em;
-                border: 2px solid $response-blue;
+                border: 2px solid $form-response-blue;
             }
         }
 
@@ -37,27 +37,27 @@ $invalid-yellow: #ffb900;
 
         &.sent {
             .wpcf7-response-output {
-                border-color: $accept-green;
+                border-color: $form-accept-green;
             }
         }
 
         &.failed,
         &.aborted {
             .wpcf7-response-output {
-                border-color: $error-red;
+                border-color: $form-error-red;
             }
         }
 
         &.spam {
             .wpcf7-response-output {
-                border-color: $spam-orange;
+                border-color: $form-spam-orange;
             }
         }
 
         &.invalid,
         &.unaccepted {
             .wpcf7-response-output {
-                border-color: $invalid-yellow;
+                border-color: $form-invalid-yellow;
             }
         }
     } //form
@@ -104,7 +104,7 @@ $invalid-yellow: #ffb900;
 }
 
 .wpcf7-not-valid-tip {
-    color: $error-red;
+    color: $form-error-red;
     font-size: 1em;
     font-weight: normal;
     display: block;
@@ -116,7 +116,7 @@ $invalid-yellow: #ffb900;
         top: 20%;
         left: 20%;
         z-index: 100;
-        border: 1px solid $error-red;
+        border: 1px solid $form-error-red;
         background: $c-white;
         padding: 0.2em 0.8em;
     }
