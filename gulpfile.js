@@ -35,7 +35,7 @@ function buildStyles() {
         .pipe(plumbError()) // Global error handler through all pipes.
         .pipe(sass({ outputStyle: "expanded", indentWidth: 4 })) //Expanded for dev.
         .pipe(autoprefixer({ grid: "autoplace" }))
-        .pipe(dest("js/ie"))
+        .pipe(dest("."))
         .pipe(browsersync.reload({ stream: true }));
 }
 
