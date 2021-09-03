@@ -65,9 +65,10 @@ $form-invalid-yellow: #ffb900;
     .ajax-loader {
         visibility: hidden;
         display: inline-block;
-        background-image: url("../../plugins/contact-form-7/assets/ajax-loader.gif");
-        width: 16px;
-        height: 16px;
+        margin-left: 1em;
+        background: url("./vendor/ajax-loader.gif") no-repeat center center / contain;
+        width: 1em;
+        height: 1em;
         border: none;
         padding: 0;
         margin: 0 0 0 4px;
