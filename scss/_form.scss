@@ -5,7 +5,7 @@
 $error-red: #dc3232;
 $response-blue: #00a0d2;
 $accept-green: #46b450;
-$span-orange: #f56e28;
+$spam-orange: #f56e28;
 $invalid-yellow: #ffb900;
 
 .wpcf7 {
@@ -50,7 +50,7 @@ $invalid-yellow: #ffb900;
 
         &.spam {
             .wpcf7-response-output {
-                border-color: $span-orange;
+                border-color: $spam-orange;
             }
         }
 
