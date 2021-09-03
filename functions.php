@@ -6,6 +6,7 @@
  * @package boilerplate
  */
 
+
 if (!function_exists('boilerplate_setup')) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.
@@ -50,7 +51,6 @@ if (!function_exists('boilerplate_setup')) :
         ));
     }
 endif;
-
 add_action('after_setup_theme', 'boilerplate_setup');
 
 
@@ -61,6 +61,7 @@ add_action('init', function () {
     remove_post_type_support('post', 'comments');
     remove_post_type_support('page', 'comments');
 }, 100);
+
 
 /*
  * Removes comment feature from admin bar
@@ -90,6 +91,7 @@ add_action('wp_enqueue_scripts', 'move_jquery_to_footer');
 add_filter('wpcf7_load_css', '__return_false'); // Remove Contact Form 7 CSS
 remove_action('wp_print_styles', 'print_emoji_styles'); // Remove default loading of emoji files
 remove_action('wp_head', 'print_emoji_detection_script', 7); // Remove default loading of emoji files
+
 
 function boilerplate_enqueue_assets()
 {
@@ -156,6 +158,7 @@ function boilerplate_enqueue_assets()
     }
 }
 add_action('wp_enqueue_scripts', 'boilerplate_enqueue_assets', 1); //load before block editor
+
 
 /* Script Defer/Async.
 wordpress.stackexchange.com/questions/359599/add-extra-parameter-in-script-tag-using-script-loader-tag
@@ -241,6 +244,27 @@ add_filter('body_class', 'add_browser_type_to_body_classes');
  */
 // add_filter('wpcf7_autop_or_not', '__return_false');
 
+
+/**
+ * Email Check Validation
+ * https://contactform7.com/2015/03/28/custom-validation/
+ */
+// function custom_email_confirmation_validation_filter($result, $tag)
+// {
+//     if ('your-email-confirm' == $tag->name) {
+//         $your_email = isset($_POST['your-email']) ? trim($_POST['your-email']) : '';
+//         $your_email_confirm = isset($_POST['your-email-confirm']) ? trim($_POST['your-email-confirm']) : '';
+
+//         if ($your_email != $your_email_confirm) {
+//             $result->invalidate($tag, "メールアドレスは一致しません。");
+//         }
+//     }
+
+//     return $result;
+// }
+// add_filter('wpcf7_validate_email*', 'custom_email_confirmation_validation_filter', 20, 2);
+
+
 /**
  * Front-end Spam protection (validation)
  * https://wp-labo.com/contact-form-7-spam-mail-shutout/
@@ -257,6 +281,7 @@ add_filter('body_class', 'add_browser_type_to_body_classes');
 //     return $result;
 // }
 // add_filter('wpcf7_validate', 'wpcf7_validate_anti_spam_message_name', 10, 2);
+
 
 /**
  * Back-end Spam protection (filter)
@@ -317,6 +342,7 @@ http://www.stevendobbelaere.be/get-the-current-pages-parent-page-id-in-wordpress
 //         return null;
 //     }
 // }
+
 
 /* Admin Area Custom CSS
 ----------------------------------------------- */
