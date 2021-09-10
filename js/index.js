@@ -130,15 +130,17 @@ function slickInitiate() {
  * AOS
  */
 function aosInitiate() {
-    //Must be initiated after slick if there are animations in the slider
-    if (typeof AOS != "undefined") {
-        AOS.init({
-            delay: 0, // values from 0 to 3000, with step 50ms
-            duration: 1000, // values from 0 to 3000, with step 50ms
-            easing: "ease", // default easing for AOS animations
-            once: true, // whether animation should happen only once - while scrolling down
-        });
-    }
+    jQuery(document).ready(function () {
+        //Must be initiated after slick if there are animations in the slider
+        if (typeof AOS != "undefined") {
+            AOS.init({
+                delay: 0, // values from 0 to 3000, with step 50ms
+                duration: 1000, // values from 0 to 3000, with step 50ms
+                easing: "ease", // default easing for AOS animations
+                once: true, // whether animation should happen only once - while scrolling down
+            });
+        }
+    });
 }
 
 /* Helpers
@@ -146,7 +148,7 @@ function aosInitiate() {
 /**
  * Debouncer
  */
- function debounce(func, wait = 20, immediate = true) {
+function debounce(func, wait = 20, immediate = true) {
     var timeout;
     return function () {
         var context = this,
