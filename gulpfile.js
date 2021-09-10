@@ -61,7 +61,7 @@ function watchBabel() {
         })
     )
     .pipe(rename({ suffix: ".ie" }))
-    .pipe(dest("js"))
+    .pipe(dest("js/ie"))
     .pipe(browsersync.reload({ stream: true }));
 }
 
