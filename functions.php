@@ -356,12 +356,10 @@ http://www.stevendobbelaere.be/get-the-current-pages-parent-page-id-in-wordpress
 // function my_admin_area_custom_css()
 // {
 //     echo '
-//         <style>
-//             #adminmenu #menu-posts,
-//             #adminmenu #menu-comments /* Hide "Comments" menu item */
-//             {
+//          <style>
+//             #adminmenu #menu-posts {
 //                 display:none;
 //             }
-//     </style>
+//          </style>
 //     ';
 // }
