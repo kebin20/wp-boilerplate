@@ -72,6 +72,12 @@ add_action('wp_before_admin_bar_render', function () {
 remove_filter('the_content', 'wpautop');
 remove_filter('the_excerpt', 'wpautop');
 
+// Removes "Customize" menu and comment-edit button from admin menu
+add_action('admin_menu', function () {
+    remove_menu_page('themes.php');
+    remove_menu_page('edit-comments.php');
+});
+
 
 /* Base Custom Code
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
