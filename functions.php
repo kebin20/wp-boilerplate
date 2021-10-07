@@ -54,23 +54,23 @@ endif;
 add_action('after_setup_theme', 'boilerplate_setup');
 
 
-/*
- * Removes comment feature from post and pages
- */
+/* Remove Features
+----------------------------------------------- */
+// Removes features from post and pages
 add_action('init', function () {
     remove_post_type_support('post', 'comments');
     remove_post_type_support('page', 'comments');
 }, 100);
 
-
-/*
- * Removes comment feature from admin bar
- */
+// Removes comment feature from admin bar
 add_action('wp_before_admin_bar_render', function () {
     global $wp_admin_bar;
     $wp_admin_bar->remove_menu('comments');
 });
 
+// Removes automatic addition of <p> tags to content and excerpt
+remove_filter('the_content', 'wpautop');
+remove_filter('the_excerpt', 'wpautop');
 
 
 /* Base Custom Code
