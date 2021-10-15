@@ -86,7 +86,7 @@ function mobNaviInitiate() {
 
     const mobNaviCloseEl = document.getElementById("js-navi-close");
     mobNaviCloseEl.addEventListener("click", closeNavi);
-    document.querySelectorAll(".mob-navi__wrap a").forEach((element) => {
+    document.querySelectorAll(".c-mob-navi__wrap a").forEach((element) => {
         element.addEventListener("click", closeNavi);
     });
 
