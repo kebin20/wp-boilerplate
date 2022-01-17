@@ -324,4 +324,13 @@
             }
         }
     }
+
+    .wp-block-image {
+        &.size-full {
+            img {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
 } // .o-prose
