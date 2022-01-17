@@ -123,7 +123,7 @@ function boilerplate_enqueue_assets()
         wp_enqueue_script('jquery');
 
         //== CRITICAL CSS
-        wp_register_style('common-style', get_template_directory_uri() . '/style.css');
+        wp_register_style('common-style', get_template_directory_uri() . '/style.css?v=1.0');
         wp_enqueue_style('common-style');
 
         //=== FONTAWESOME
