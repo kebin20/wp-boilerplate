@@ -147,10 +147,10 @@ function boilerplate_enqueue_assets()
         //=== INIT
         //Scripts
         if (!$is_IE) :
-            wp_register_script('init-script', get_template_directory_uri() . '/js/index.js', array(), false, true); //load into footer
+            wp_register_script('init-script', get_template_directory_uri() . '/js/index.js?v=1.0', array(), false, true); //load into footer
             wp_enqueue_script('init-script');
         else :
-            wp_register_script('init-script-ie', get_template_directory_uri() . '/js/ie/index.ie.js', array(), false, true); //load into footer
+            wp_register_script('init-script-ie', get_template_directory_uri() . '/js/ie/index.ie.js?v=1.0', array(), false, true); //load into footer
             wp_enqueue_script('init-script-ie');
         endif;
 
