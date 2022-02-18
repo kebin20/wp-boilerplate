@@ -8,13 +8,8 @@
 
 ?>
 
+<div id="js-page-banner" class="c-sec-head">
 
-<footer class="c-footer"></footer>
+    <h1><?= $title ?></h1>
 
-
-<?php wp_footer(); ?>
-
-
-</body>
-
-</html>
+</div>
