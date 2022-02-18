@@ -40,4 +40,8 @@ endif;
     get_template_part('parts/desktop-header', null, array('type' => 'sticky'));
 
     get_template_part('parts/mobile-header');
+
+    if (is_home()) :
+        get_template_part('parts/second-header');
+    endif;
     ?>
