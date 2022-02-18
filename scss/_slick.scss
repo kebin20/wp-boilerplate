@@ -132,6 +132,7 @@
     line-height: 0;
 
     position: absolute;
+    z-index: $zindex-slick;
     top: 50%;
 
     display: block;
