@@ -2,11 +2,13 @@
 ################################################################# */
 // sass-lint:disable nesting-depth force-attribute-nesting no-color-literals
 
-$form-error-red: #dc3232;
-$form-response-blue: #00a0d2;
-$form-accept-green: #46b450;
-$form-spam-orange: #f56e28;
-$form-invalid-yellow: #ffb900;
+:root {
+    --form-error-red: #dc3232;
+    --form-response-blue: #00a0d2;
+    --form-accept-green: #46b450;
+    --form-spam-orange: #f56e28;
+    --form-invalid-yellow: #ffb900;
+}
 
 .wpcf7 {
     .screen-reader-response {
@@ -25,7 +27,7 @@ $form-invalid-yellow: #ffb900;
             .wpcf7-response-output {
                 margin: 2em 0.5em 1em;
                 padding: 0.2em 1em;
-                border: 2px solid $form-response-blue;
+                border: 2px solid var(--form-response-blue);
             }
         }
 
@@ -37,27 +39,27 @@ $form-invalid-yellow: #ffb900;
 
         &.sent {
             .wpcf7-response-output {
-                border-color: $form-accept-green;
+                border-color: var(--form-accept-green);
             }
         }
 
         &.failed,
         &.aborted {
             .wpcf7-response-output {
-                border-color: $form-error-red;
+                border-color: var(--form-error-red);
             }
         }
 
         &.spam {
             .wpcf7-response-output {
-                border-color: $form-spam-orange;
+                border-color: var(--form-spam-orange);
             }
         }
 
         &.invalid,
         &.unaccepted {
             .wpcf7-response-output {
-                border-color: $form-invalid-yellow;
+                border-color: var(--form-invalid-yellow);
             }
         }
     } //form
@@ -66,7 +68,8 @@ $form-invalid-yellow: #ffb900;
         visibility: hidden;
         display: inline-block;
         margin-left: 1em;
-        background: url("./img/ajax-loader.svg") no-repeat center center / contain;
+        background: url("./img/ajax-loader.svg") no-repeat center center /
+            contain;
         width: 1em;
         height: 1em;
         border: none;
@@ -105,7 +108,7 @@ $form-invalid-yellow: #ffb900;
 }
 
 .wpcf7-not-valid-tip {
-    color: $form-error-red;
+    color: var(--form-error-red);
     font-size: 1em;
     font-weight: normal;
     display: block;
@@ -117,8 +120,8 @@ $form-invalid-yellow: #ffb900;
         top: 20%;
         left: 20%;
         z-index: 100;
-        border: 1px solid $form-error-red;
-        background: $c-white;
+        border: 1px solid var(--form-error-red);
+        background: var(--c-white);
         padding: 0.2em 0.8em;
     }
 }

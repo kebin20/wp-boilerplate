@@ -107,7 +107,7 @@
 
 /* Slider */
 .slick-loading .slick-list {
-    background: $c-white url("vendor/slick/ajax-loader.gif") center center
+    background: var(--c-white) url("vendor/slick/ajax-loader.gif") center center
         no-repeat;
 }
 
@@ -132,7 +132,7 @@
     line-height: 0;
 
     position: absolute;
-    z-index: $zindex-slick;
+    z-index: var(--zindex-slick);
     top: 50%;
 
     display: block;
@@ -170,7 +170,7 @@
         line-height: 1;
 
         opacity: 0.75;
-        color: $c-white;
+        color: var(--c-white);
     }
 }
 
@@ -195,7 +195,7 @@
     $dot-size: 3rem;
 
     position: absolute;
-    z-index: $zindex-slick;
+    z-index: var(--zindex-slick);
     bottom: 3rem;
     display: block;
     width: 100%;
@@ -224,7 +224,7 @@
             border: none;
             outline: none;
             background: transparent;
-            color: $c-white;
+            color: var(--c-white);
 
             &:active,
             &:hover,
@@ -247,7 +247,7 @@
                 font-size: $dot-size;
                 line-height: 1;
                 text-align: center;
-                text-shadow: $text-shadow;
+                text-shadow: var(--c-black);
                 opacity: 0.5;
                 transition: opacity $transition-default;
             }

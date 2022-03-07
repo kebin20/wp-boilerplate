@@ -11,7 +11,7 @@
 
     a {
         text-decoration: none;
-        color: $c-theme-color;
+        color: var(--c-theme-color);
 
         &:hover {
             border-bottom: 1px solid;
@@ -316,7 +316,7 @@
 
         &__link {
             /* a */
-            color: $c-white;
+            color: var(--c-theme-color);
 
             &:hover {
                 border-bottom: none;

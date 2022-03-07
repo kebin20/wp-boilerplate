@@ -1,20 +1,13 @@
-:root {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-
-    --vh: 1vh; // Will be updated by index.js/initCSSVars()
-}
-
 body {
     position: relative;
 
-    font-size: $fs-body;
-    font-weight: $fw-regular;
-    font-family: $ff-sans;
+    font-family: var(--ff-sans);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-regular);
 
     line-height: 1.6;
-    color: $c-text;
-    background: $c-white;
+    color: var(--c-text);
+    background: var(--c-white);
     overflow-anchor: auto;
 }
 
@@ -30,8 +23,8 @@ a {
 }
 
 ::selection {
-    color: $c-white;
-    background: $c-theme-color;
+    color: var(--c-white);
+    background: var(--c-theme-color);
 }
 
 button,
