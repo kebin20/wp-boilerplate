@@ -36,9 +36,7 @@ endif;
 
 
     <?php
-    get_template_part('parts/desktop-header', null, array('type' => 'fixed'));
-    get_template_part('parts/desktop-header', null, array('type' => 'sticky'));
-
+    get_template_part('parts/desktop-header');
     get_template_part('parts/mobile-header');
 
     if (is_home()) :
