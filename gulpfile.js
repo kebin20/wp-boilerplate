@@ -42,7 +42,7 @@ function buildStyles() {
  */
 function watchJS() {
     return watch(
-        ["*.js", "**/*.js", "!js/index.js"], // Watching everything but index.js
+        ["*.js", "**/*.js"],
         { events: "all", ignoreInitial: true },
         function (done) {
             browsersync.reload();
