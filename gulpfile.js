@@ -5,13 +5,11 @@
  */
 
 const { src, dest, watch, series, parallel } = require("gulp");
-const rename = require("gulp-rename");
 const browsersync = require("browser-sync").create();
 const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
 const plumber = require("gulp-plumber");
 const sasslint = require("gulp-sass-lint");
-const babel = require("gulp-babel");
 const cache = require("gulp-cached");
 const notify = require("gulp-notify");
 const beeper = require("beeper");
@@ -37,32 +35,6 @@ function buildStyles() {
         .pipe(autoprefixer({ grid: "autoplace" }))
         .pipe(dest("."))
         .pipe(browsersync.reload({ stream: true }));
-}
-
-/**
- * Refresh page on index.js change
- */
-function watchBabel() {
-    return watch(
-        ["js/index.js"],
-        { events: "all", ignoreInitial: true },
-        series(buildBabel)
-    );
-}
-
-/**
- * Compile index.js with Babel
- */
- function buildBabel() {
-    return src(["js/*.js", "!js/*.ie.js"])
-    .pipe(
-        babel({
-            presets: ["@babel/preset-env"],
-        })
-    )
-    .pipe(rename({ suffix: ".ie" }))
-    .pipe(dest("js/ie"))
-    .pipe(browsersync.reload({ stream: true }));
 }
 
 /**
@@ -147,14 +119,14 @@ function plumbError() {
 // $ gulp
 exports.default = series(
     browserSync,
-    parallel(watchStyles, watchPHP, watchJS, watchBabel)
+    parallel(watchStyles, watchPHP, watchJS)
 );
 
 // $ gulp watch
 exports.watch = series(
     browserSync,
-    parallel(watchStyles, watchPHP, watchJS, watchBabel)
+    parallel(watchStyles, watchPHP, watchJS)
 );
 
 // $ gulp build
-exports.build = series(buildStyles, buildBabel);
+exports.build = series(buildStyles);

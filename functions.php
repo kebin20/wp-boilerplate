@@ -102,23 +102,6 @@ remove_action('wp_head', 'print_emoji_detection_script', 7); // Remove default l
 function boilerplate_enqueue_assets()
 {
     if (!is_admin()) {
-        //If IE, load IE-specific polyfills
-        global $is_IE;
-        if ($is_IE) :
-            // Object Fit
-            wp_register_script('ofi-script', get_template_directory_uri() . '/vendor/polyfills/ofi.min.js', array(), false, true); //load into footer
-            wp_enqueue_script('ofi-script');
-            // CSS variables
-            wp_register_script('css-variables-script', get_template_directory_uri() . '/vendor/polyfills/css-vars-ponyfill.min.js', array(), false, true); //load into footer
-            wp_enqueue_script('css-variables-script');
-            // Classlist
-            wp_register_script('classlist-script', get_template_directory_uri() . '/vendor/polyfills/classlist.js', array(), false, true); //load into footer
-            wp_enqueue_script('classlist-script');
-            // NodeList forEach
-            wp_register_script('nodelist-foreach-script', get_template_directory_uri() . '/vendor/polyfills/nodelist-foreach.js', array(), false, true); //load into footer
-            wp_enqueue_script('nodelist-foreach-script');
-        endif;
-
         //== DEFAULT JS
         wp_enqueue_script('jquery');
 
@@ -146,13 +129,8 @@ function boilerplate_enqueue_assets()
 
         //=== INIT
         //Scripts
-        if (!$is_IE) :
-            wp_register_script('init-script', get_template_directory_uri() . '/js/index.js?v=1.0', array(), false, true); //load into footer
-            wp_enqueue_script('init-script');
-        else :
-            wp_register_script('init-script-ie', get_template_directory_uri() . '/js/ie/index.ie.js?v=1.0', array(), false, true); //load into footer
-            wp_enqueue_script('init-script-ie');
-        endif;
+        wp_register_script('init-script', get_template_directory_uri() . '/js/index.js?v=1.0', array(), false, true); //load into footer
+        wp_enqueue_script('init-script');
 
         //=== LIGHTBOX
         if (is_page()) :
