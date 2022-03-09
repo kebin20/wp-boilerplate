@@ -46,6 +46,8 @@
 
 // Animations
 //----------------------------------------------- //
+$shift-default-offset: 3px;
+
 @mixin shift-on-hover-x($offset: $shift-default-offset) {
     transition: transform $transition-default;
 
