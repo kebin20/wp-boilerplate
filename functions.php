@@ -221,6 +221,10 @@ add_filter('body_class', 'add_browser_type_to_body_classes');
 
 /* Optional Custom Code
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
+/* Second Header Thumbnail
+----------------------------------------------- */
+// add_image_size( 'second-header', 1300, 384, true );
+
 /* Contact Form 7
 ----------------------------------------------- */
 /**
