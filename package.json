@@ -25,7 +25,8 @@
     "browserslist": [
         "last 2 versions",
         "> 1%",
-        "IE 11"
+        "not ie > 0",
+        "not ie_mob > 0"
     ],
     "scripts": {
         "postinstall": "./node_modules/.bin/gulp build"
