@@ -39,7 +39,7 @@ endif;
     get_template_part('parts/desktop-header');
     get_template_part('parts/mobile-header');
 
-    if (is_home()) :
+    if (!is_home()) :
         get_template_part('parts/second-header');
     endif;
     ?>
