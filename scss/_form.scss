@@ -25,7 +25,9 @@
     form {
         & {
             .wpcf7-response-output {
-                margin: 2em 0.5em 1em;
+                width: max-content;
+                max-width: 100%;
+                margin: 2.5em auto 1em;
                 padding: 0.2em 1em;
                 border: 2px solid var(--form-response-blue);
             }
