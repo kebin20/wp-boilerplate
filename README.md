@@ -3,6 +3,7 @@
 -   This is my custom Wordpress boilerplate for creating custom Wordpress themes
 -   This boilerplate uses BEM + ITCSS (BEMIT) to help eliminate namespacing issues
 -   All assets in `/src/` are processed through Webpack and unloaded into `/dist/`
+-   The use-case for this template is for a Japanese client
 
 ## Features
 
