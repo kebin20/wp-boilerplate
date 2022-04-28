@@ -1,20 +1,21 @@
 # WP Boilerplate
 
--   This is my custom Wordpress boilerplate for creating custom Wordpress themes.
--   This boilerplate uses BEMIT to help eliminate namespacing issues
-    -   BEMIT = BEM + [ITCSS](www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528)
+-   This is my custom Wordpress boilerplate for creating custom Wordpress themes
+-   This boilerplate uses BEM + ITCSS (BEMIT) to help eliminate namespacing issues
+-   All assets in `/src/` are processed through Webpack and unloaded into `/dist/`
 
 ## Features
 
-Features provided by Gulp
+Webpack
 
--   Autoprefixing
--   SASS parsing
--   SASS linting
--   Babel-fying index.js -> index-ie.js
-    -   index-ie.js is then only loaded by IE users
--   Watching of all files and automatic updating through Browsersync
--   Live error alerts
+-   PostCSS
+    -   SASS parsing
+    -   Style linting
+    -   Autoprefixing
+    -   Inlining CSS `url()` assets
+-   Browsersync
+    -   Reloads PHP/JS files on change
+-   Sourcemaps
 
 WP Plugins supported by default
 
@@ -23,24 +24,30 @@ WP Plugins supported by default
 
 Files queued by default
 
--   Default WP jQuery
--   Slick Slider
--   Lightbox
--   FontAwesome (Webfonts & CSS - no JS)
--   Animate-on-scroll (AOS)
--   IE polyfills
-    -   Classlist API polyfill
-    -   CSS Vars ponyfill
-    -   Nodelist.forEach polyfill
-    -   Object Fit polyfill
+-   Bundled CSS
+-   Bundled JS (including vendor JS/CSS assets)
 
-## To get started
+## Launching:
 
-Due to requirements of NodeSass boilerplate requires Node version 14.15.
-Use NVM to manage versions.
+Working versions:
 
-```
-$ nvm use 14.15
-$ npm install
-$ gulp watch
-```
+-   Node: v17.2.0
+-   NPM: v8.1.4
+-   Webpack: 5.72.0
+
+Commands:
+
+-   `npm run build`
+    -   Builds all assets and also runs `postbuild` script, converting JPG to WEBP and cleaning
+-   `npm run dev`
+    -   Launches dev environment
+-   `npm run clean`
+    -   Removes build files
+-   `npm run unpack`
+    -   Cleans, installs `node_modules` and WP plugins through Composer, runs build script
+
+## Bugs:
+
+-   StyleLint
+    -   _stylelint-disable-line_ feature is broken
+    -   _ignoreFiles_ option in .stylelintrc is broken

@@ -1,5 +1,21 @@
-style.css
-style.css.map
+# Misc
+.DS_Store
+
+# Wordpress
+plugins/*
+!plugins/advanced-custom-fields-pro/
+
+# Wordpress Plugins
+advanced-cache.php
+autoptimize_404_handler.php
+
+# NPM
 node_modules/
-.DS_store
-linters/sass-lint.html
+
+# Webpack
+style.css.map
+dist/
+
+# Composer
+vendor/
+composer.lock

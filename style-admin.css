@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+/* Hide the default admin page */
+#adminmenu #menu-posts {
+    display: none;
+}

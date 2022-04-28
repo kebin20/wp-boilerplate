@@ -1,0 +1,35 @@
+{
+    "name": "veritasnz/wp-theme-factory",
+    "description": "Base theme for creating bespoke WP themes",
+    "repositories":[
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    },
+    "extra": {
+        "installer-paths": {
+            "../../plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ]
+        }
+    },
+    "require": {
+        "wpackagist-plugin/codepress-admin-columns": "^4.4",
+        "wpackagist-plugin/contact-form-7": "^5.5",
+        "wpackagist-plugin/contact-form-cfdb7": "^1.2.6.4",
+        "wpackagist-plugin/duplicate-post": "^4.4",
+        "wpackagist-plugin/intuitive-custom-post-order": "^3.1",
+        "wpackagist-plugin/login-rebuilder": "^2.7",
+        "wpackagist-plugin/regenerate-thumbnails": "^3.1",
+        "wpackagist-plugin/wordpress-importer": "^0.7.0",
+        "wpackagist-plugin/wordpress-seo": "^18.4",
+        "wpackagist-plugin/wp-mail-smtp": "^3.3",
+        "wpackagist-plugin/wp-super-cache": "^1.7"
+    }
+}

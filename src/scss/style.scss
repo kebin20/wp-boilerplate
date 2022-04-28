@@ -1,0 +1,50 @@
+/*
+* Built with ITCSS ▲
+*/
+
+@charset "UTF-8";
+
+/* 0 - Vendor
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
+@use "L0-vendor/prose";
+@use "L0-vendor/swiper";
+@use "L0-vendor/wpcf7";
+
+/* 1 - Settings
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
+@use "L1-settings/base";
+
+// 2 - Tools
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
+@use "L2-tools";
+
+/* 3 - Generic
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
+@use "L3-generic";
+
+/* 4 - Elements
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
+@use "L4-elements";
+
+/* 5 - Objects
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
+@use "L5-objects";
+
+/* 6 - Utilities
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
+@use "L6-utilities";
+
+/* 7 - Components
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
+@use "L7-components";
+
+/* 8 - Trumps
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
+@use "L8-trumps";
+
+/* Testing
+===================================== */
+/* No [alt] test */
+// img:not([alt]):not([aria-hidden="true"]) {
+//     filter: blur(5px);
+// }

@@ -1,0 +1,56 @@
+@use "L1-settings/constants" as *;
+
+body {
+    position: relative;
+
+    font-family: var(--ff-sans);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-regular);
+
+    line-height: 1.6;
+    color: var(--c-text);
+    background: var(--c-white);
+    overflow-anchor: auto;
+}
+
+a {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+        transition: all $transition-default;
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+::selection {
+    color: var(--c-white);
+    background: var(--c-theme);
+}
+
+button,
+[type="button"],
+[type="submit"] {
+    cursor: pointer;
+}
+
+em {
+    font-style: normal;
+}
+
+img,
+svg,
+iframe {
+    display: block;
+    max-width: 100%;
+}
+
+img,
+svg {
+    height: auto;
+}
+
+main {
+    overflow: hidden;
+}

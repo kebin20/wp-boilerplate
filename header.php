@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Theme Name: Boilerplate
+ * Theme Name: Projectname
  * Author: Sean Verity
- * @package boilerplate
+ * @package projectname
  */
 
 $bodyClass = array();
@@ -25,21 +25,30 @@ endif;
 <html <?php language_attributes(); ?>>
 
 <head>
+
     <meta charset="<?php bloginfo("charset"); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
-    <?php wp_head(); ?>
+    <?php
+    wp_head();
+    get_template_part('parts/layout/head-tag');
+    ?>
+
 </head>
+
 
 <body <?php body_class($bodyClass); ?>>
 
 
     <?php
-    get_template_part('parts/desktop-header');
-    get_template_part('parts/mobile-header');
+    get_template_part('parts/layout/desktop-header');
+    get_template_part('parts/layout/mobile-header');
 
     if (!is_home()) :
-        get_template_part('parts/second-header');
+        get_template_part('parts/layout/second-header');
     endif;
     ?>
+
+
+    <main>

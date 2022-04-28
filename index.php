@@ -1,23 +1,23 @@
 <?php
 
 /**
- * Theme Name: Boilerplate
+ * Theme Name: Projectname
  * Author: Sean Verity
- * @package boilerplate
+ * @package projectname
  */
 
 get_header();
+
+
+if (is_404()) :
 ?>
 
-
-    <?php
-    if (have_posts()) :
-        while (have_posts()) :
-            the_post();
-        endwhile;
-    endif;
-    ?>
-
+    <div class="o-wrapper">
+        <p class="o-empty-content">ページが見つかりませんでした。</p>
+    </div>
 
 <?php
+endif;
+
+
 get_footer();
