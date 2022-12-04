@@ -6,11 +6,12 @@
         "build": "webpack --mode production",
         "dev": "webpack --mode development --watch",
         "clean": "node webpack-clean.js",
-        "unpack": "node webpack-clean.js && npm i && composer install && webpack --mode production"
+        "unpack": "node webpack-clean.js && yarn && composer install && webpack --mode production"
     },
     "devDependencies": {
         "aos": "^2.3.4",
         "autoprefixer": "^10.4.4",
+        "browser-sync": "^2.27.10",
         "browser-sync-webpack-plugin": "^2.3.0",
         "css-loader": "^6.7.1",
         "imagemin": "^8.0.1",
