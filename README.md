@@ -44,7 +44,6 @@ It provides basic support for features I commonly use on my websites. Including 
 -   Webpack
     -   PostCSS
         -   SASS parsing
-        -   Style linting
         -   Autoprefixing
         -   Inlining CSS `url()` assets
     -   Browsersync
@@ -72,7 +71,3 @@ Commands:
     -   Cleans, installs `node_modules` and WP plugins through Composer, runs build script
 
 ## Known bugs:
-
--   StyleLint
-    -   _stylelint-disable-line_ feature is broken
-    -   _ignoreFiles_ option in .stylelintrc is broken

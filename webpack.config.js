@@ -15,13 +15,6 @@ const MiniCssExtractPlugin = new _MiniCssExtractPlugin({
     filename: "../[name].css",
 });
 
-// Stylelint
-import _StyleLintPlugin from "stylelint-webpack-plugin";
-const StyleLintPlugin = new _StyleLintPlugin({
-    files: ["src/**/*.{scss,sass,css}"],
-    lintDirtyModulesOnly: true,
-});
-
 //BrowserSync
 import _BrowserSyncPlugin from "browser-sync-webpack-plugin";
 const BrowserSyncPlugin = new _BrowserSyncPlugin({
@@ -45,7 +38,7 @@ const output = {
     path: path.resolve(__dirname, "dist"),
 };
 
-const plugins = [MiniCssExtractPlugin, StyleLintPlugin, BrowserSyncPlugin];
+const plugins = [MiniCssExtractPlugin, BrowserSyncPlugin];
 
 export default {
     entry,
@@ -74,7 +67,6 @@ export default {
                                         "postcss-reporter",
                                         { clearReportedMessages: true },
                                     ],
-                                    // "stylelint",
                                 ],
                             },
                         },
