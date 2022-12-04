@@ -30,7 +30,7 @@ const BrowserSyncPlugin = new _BrowserSyncPlugin({
 ----------------------------------------------- */
 const entry = {
     "js/index": "./src/js/index",
-    style: "./src/scss/style.scss",
+    style: "./src/css/style.css",
 };
 
 const output = {
@@ -50,7 +50,7 @@ export default {
         rules: [
             { test: /\.css$/, use: ["style-loader", "css-loader"] },
             {
-                test: /\.scss$/,
+                test: /style\.css$/,
                 use: [
                     _MiniCssExtractPlugin.loader,
                     "css-loader",
@@ -61,22 +61,13 @@ export default {
                             postcssOptions: {
                                 plugins: [
                                     "postcss-assets",
-                                    ["tailwindcss", {}],
+                                    "tailwindcss",
                                     "autoprefixer",
                                     [
                                         "postcss-reporter",
                                         { clearReportedMessages: true },
                                     ],
                                 ],
-                            },
-                        },
-                    },
-                    {
-                        loader: "sass-loader",
-                        options: {
-                            sourceMap: true,
-                            sassOptions: {
-                                outputStyle: "expanded",
                             },
                         },
                     },

@@ -43,7 +43,7 @@ It provides basic support for features I commonly use on my websites. Including 
 
 -   Webpack
     -   PostCSS
-        -   SASS parsing
+        -   Tailwind
         -   Autoprefixing
         -   Inlining CSS `url()` assets
     -   Browsersync

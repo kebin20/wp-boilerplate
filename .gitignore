@@ -2,7 +2,7 @@
 .DS_Store
 
 # Wordpress
-style.css
+/style.css
 plugins/*
 !plugins/advanced-custom-fields-pro/
 
