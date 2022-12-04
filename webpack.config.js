@@ -68,12 +68,13 @@ export default {
                             postcssOptions: {
                                 plugins: [
                                     "postcss-assets",
+                                    ["tailwindcss", {}],
                                     "autoprefixer",
                                     [
                                         "postcss-reporter",
                                         { clearReportedMessages: true },
                                     ],
-                                    "stylelint",
+                                    // "stylelint",
                                 ],
                             },
                         },
