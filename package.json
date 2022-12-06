@@ -9,6 +9,7 @@
     "unpack": "node webpack-clean.js && yarn && composer install && webpack --mode production"
   },
   "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.8",
     "aos": "^2.3.4",
     "autoprefixer": "^10.4.4",
