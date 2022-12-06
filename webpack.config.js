@@ -45,7 +45,6 @@ export default {
   output,
   plugins,
   stats: "minimal",
-  devtool: "source-map",
   module: {
     rules: [
       { test: /\.css$/, use: ["style-loader", "css-loader"] },
@@ -57,7 +56,6 @@ export default {
           {
             loader: "postcss-loader",
             options: {
-              sourceMap: true,
               postcssOptions: {
                 plugins: [
                   "postcss-assets",
