@@ -8,37 +8,37 @@ import webp from "imagemin-webp";
 import imageminSvgo from "imagemin-svgo";
 
 const optimizeImages = async () => {
-    const IMG_DEST = "dist/img";
+  const IMG_DEST = "dist/img";
 
-    await imagemin(["src/img/*.{jpg,png,gif}"], {
-        destination: IMG_DEST,
-    });
-    console.log(" - JPG and PNGs processed");
+  await imagemin(["src/img/*.{jpg,png,gif}"], {
+    destination: IMG_DEST,
+  });
+  console.log(" - JPG and PNGs processed");
 
-    await imagemin(["src/img/*.{jpg,png}"], {
-        destination: IMG_DEST,
-        plugins: [webp({ lossless: true })],
-    });
-    console.log(" - JPG and PNGs converted to WebP");
+  await imagemin(["src/img/*.{jpg,png}"], {
+    destination: IMG_DEST,
+    plugins: [webp({ lossless: true })],
+  });
+  console.log(" - JPG and PNGs converted to WebP");
 
-    await imagemin(["src/img/*.svg"], {
-        destination: IMG_DEST,
+  await imagemin(["src/img/*.svg"], {
+    destination: IMG_DEST,
+    plugins: [
+      imageminSvgo({
         plugins: [
-            imageminSvgo({
-                plugins: [
-                    {
-                        name: "removeViewBox",
-                        active: false,
-                    },
-                    {
-                        name: "collapseGroups",
-                        active: true,
-                    },
-                ],
-            }),
+          {
+            name: "removeViewBox",
+            active: false,
+          },
+          {
+            name: "collapseGroups",
+            active: true,
+          },
         ],
-    });
-    console.log(" - SVGs processed");
+      }),
+    ],
+  });
+  console.log(" - SVGs processed");
 };
 
 /**
@@ -49,14 +49,14 @@ const optimizeImages = async () => {
 import fs from "fs";
 
 const fileCleanup = async () => {
-    const paths = ["./dist/style.js", "./dist/style.js.map"];
+  const paths = ["./dist/style.js", "./dist/style.js.map"];
 
-    paths.forEach((path) => {
-        if (fs.existsSync(path)) {
-            fs.unlinkSync(path);
-            console.log(` - Unnecessary file removed successfully – (${path})`);
-        }
-    });
+  paths.forEach((path) => {
+    if (fs.existsSync(path)) {
+      fs.unlinkSync(path);
+      console.log(` - Unnecessary file removed successfully – (${path})`);
+    }
+  });
 };
 
 /**

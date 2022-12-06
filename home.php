@@ -13,44 +13,44 @@ $hero_slider = get_field("home_hero_slider", "option");
 
 $hero_is_slider = false;
 if (count($hero_slider) > 1) :
-    $hero_is_slider = true;
+  $hero_is_slider = true;
 endif;
 
 if ($hero_slider) :
 ?>
 
 
-    <div id="js-page-banner" class="t-home-hero">
+  <div id="js-page-banner" class="t-home-hero">
 
 
-        <?php if ($hero_is_slider) : ?>
+    <?php if ($hero_is_slider) : ?>
 
-            <div class="t-home-hero__slider swiper">
+      <div class="t-home-hero__slider swiper">
 
-                <div class="swiper-wrapper">
-                    <?php foreach ($hero_slider as $image) : ?>
-                        <div class="swiper-slide">
-                            <img src="<?= $image["url"]; ?>" alt="<?= $image["caption"]; ?>">
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-
-                <!-- <div class="swiper-pagination"></div> -->
-                <!-- <div class="swiper-button-prev"></div> -->
-                <!-- <div class="swiper-button-next"></div> -->
-
+        <div class="swiper-wrapper">
+          <?php foreach ($hero_slider as $image) : ?>
+            <div class="swiper-slide">
+              <img src="<?= $image["url"]; ?>" alt="<?= $image["caption"]; ?>">
             </div>
+          <?php endforeach; ?>
+        </div>
 
-        <?php else : ?>
+        <!-- <div class="swiper-pagination"></div> -->
+        <!-- <div class="swiper-button-prev"></div> -->
+        <!-- <div class="swiper-button-next"></div> -->
 
-            <div class="t-home-hero__img">
-                <img src="<?= $hero_slider[0]["url"]; ?>" alt="<?= $hero_slider[0]["caption"]; ?>">
-            </div>
+      </div>
 
-        <?php endif; ?>
+    <?php else : ?>
+
+      <div class="t-home-hero__img">
+        <img src="<?= $hero_slider[0]["url"]; ?>" alt="<?= $hero_slider[0]["caption"]; ?>">
+      </div>
+
+    <?php endif; ?>
 
 
-    </div>
+  </div>
 
 
 <?php endif; ?>

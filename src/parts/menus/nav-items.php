@@ -10,13 +10,13 @@
 
 
 <li>
-    <a href="<?= bloginfo("url") ?>/about/">私たちのこと</a>
+  <a href="<?= bloginfo("url") ?>/about/">私たちのこと</a>
 </li>
 
 <li>
-    <a href="<?= bloginfo("url") ?>/blog/">ブログ</a>
+  <a href="<?= bloginfo("url") ?>/blog/">ブログ</a>
 </li>
 
 <li>
-    <a href="<?= bloginfo("url") ?>/contact/">お問い合わせ</a>
+  <a href="<?= bloginfo("url") ?>/contact/">お問い合わせ</a>
 </li>

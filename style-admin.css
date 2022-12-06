@@ -2,5 +2,5 @@
 
 /* Hide the default admin page */
 #adminmenu #menu-posts {
-    display: none;
+  display: none;
 }
