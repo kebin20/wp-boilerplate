@@ -12,28 +12,28 @@ get_header();
 
 <div class="o-wrapper">
 
-    <?php if (have_posts()) : ?>
+  <?php if (have_posts()) : ?>
 
-        <ul class="c-arch">
+    <ul class="c-arch">
 
-            <?php
-            while (have_posts()) :
-                the_post();
-                get_template_part('parts/archive/archive-item');
-            endwhile;
-            ?>
+      <?php
+      while (have_posts()) :
+        the_post();
+        get_template_part('src/parts/archive/archive-item');
+      endwhile;
+      ?>
 
-        </ul>
+    </ul>
 
-        <div class="c-pagination">
-            <?php projectname_pagination('＜', '＞'); ?>
-        </div>
+    <div class="c-pagination">
+      <?php projectname_pagination('＜', '＞'); ?>
+    </div>
 
-    <?php else : ?>
+  <?php else : ?>
 
-        <p class="o-empty-content">投稿の内容が見つかりませんでした。</p>
+    <p class="o-empty-content">投稿の内容が見つかりませんでした。</p>
 
-    <?php endif; ?>
+  <?php endif; ?>
 
 </div>
 
