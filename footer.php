@@ -13,7 +13,7 @@
 
 
 <footer class="c-footer">
-  <div class="o-wrapper o-prose">
+  <div class="o-wrapper prose">
     <p>Footer content</p>
     <ul>
       <?php get_template_part('src/parts/menus/sns-items'); ?>

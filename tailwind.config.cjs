@@ -6,5 +6,5 @@ module.exports = {
       screen: "calc(var(--js-vh) * 100)",
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
