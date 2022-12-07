@@ -34,7 +34,7 @@ module.exports = {
       sans: ["Custom-font-goes-here", ...defaultTheme.fontFamily.sans],
     },
     fontSize: {
-      body: ["1.6rem", "19.2rem"], // 16 / 19.2px
+      body: ["1.6rem", "1.92rem"], // 16 / 19.2px
     },
     fontWeight: {
       normal: 400,
