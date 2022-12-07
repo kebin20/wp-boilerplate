@@ -12,9 +12,7 @@ import "aos/dist/aos.css";
 /* Global
 ----------------------------------------------- */
 let isMobile = false;
-const MOBILE_THRESHOLD = window
-  .getComputedStyle(document.documentElement)
-  .getPropertyValue("--js-mob-threshold");
+const MOBILE_THRESHOLD = 768; // same as TW "screens.md" value
 
 /* Init
 ----------------------------------------------- */
