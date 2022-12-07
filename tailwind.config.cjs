@@ -89,7 +89,7 @@ module.exports = {
 
       padding: "2rem", // Side-padding
     },
-    transitionDuration: { DEFAULT: "300ms" },
+    transitionDuration: { DEFAULT: "300ms", "mob-nav": "800ms" },
     zIndex: {
       1: 1,
       2: 2,
@@ -100,6 +100,9 @@ module.exports = {
     extend: {
       height: {
         screen: "calc(var(--js-vh) * 100)",
+      },
+      transitionTimingFunction: {
+        "mob-nav": "cubic-bezier(0.19, 1, 0.22, 1)",
       },
     },
   },

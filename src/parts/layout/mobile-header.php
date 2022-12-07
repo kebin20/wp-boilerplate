@@ -46,7 +46,7 @@ $closing_classes = "group-[.js-navi-closing]/root:z-mob-navi group-[.js-navi-clo
 ?>
 
 
-<nav aria-labelledby="js-navi-open" class="md:hidden <?= $open_classes ?> <?= $closing_classes ?> fixed -z-1 top-0 left-0 w-full h-full overflow-y-scroll py-28 px-padding text-white bg-theme pointer-events-none invisible scale-110 opacity-0 transition-all">
+<nav aria-labelledby="js-navi-open" class="md:hidden <?= $open_classes ?> <?= $closing_classes ?> fixed -z-1 top-0 left-0 w-full h-full overflow-y-scroll py-28 px-padding text-white bg-theme pointer-events-none invisible scale-110 opacity-0 transition-all duration-mob-nav ease-mob-nav">
 
   <button id="js-navi-close" class="w-18 h-18 absolute top-28 right-padding" aria-label="ナビゲーションメニューを閉じる">
 

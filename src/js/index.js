@@ -12,6 +12,7 @@ import "aos/dist/aos.css";
 /* Global
 ----------------------------------------------- */
 let isMobile = false;
+const TRANSITION_TIME = 800; // same as TW "transitionDuration.mob-nav" value
 const MOBILE_THRESHOLD = 768; // same as TW "screens.md" value
 
 /* Init
@@ -89,12 +90,6 @@ function desktopHeaderInitiate() {
  */
 function mobNaviInitiate() {
   // Init vars
-  const HAM_TRANSITION_TIME = parseInt(
-    window
-      .getComputedStyle(document.documentElement)
-      .getPropertyValue("--js-mob-transition-dur")
-      .replace("ms", "")
-  );
   const hamburgerEl = document.getElementById("js-navi-open");
   const closeNavMenuEl = document.getElementById("js-navi-close");
   const docEl = document.documentElement;
@@ -122,7 +117,7 @@ function mobNaviInitiate() {
       document.addEventListener("keyup", (e) => {
         if (e.keyCode === 27) closeMenu();
       });
-    }, HAM_TRANSITION_TIME);
+    }, TRANSITION_TIME);
   }
 
   function closeMenu() {
@@ -132,7 +127,7 @@ function mobNaviInitiate() {
     window.setTimeout(function () {
       docEl.classList.remove("js-navi-closing");
       hamburgerEl.focus();
-    }, HAM_TRANSITION_TIME);
+    }, TRANSITION_TIME);
   }
 }
 
