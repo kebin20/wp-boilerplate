@@ -6,7 +6,8 @@
  * @package projectname
  */
 
-$bodyClass = array();
+// Initiate with TW body group
+$bodyClass = array('group/body');
 
 // Add .is-mobile to body classes
 if (wp_is_mobile()) :
@@ -22,7 +23,7 @@ endif;
 ?>
 
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="group/root">
 
 <head>
 

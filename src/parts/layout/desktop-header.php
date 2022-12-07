@@ -14,11 +14,11 @@ endif;
 ?>
 
 
-<header class="c-desk-head">
+<header class="hidden md:block group-[.js-scrolled]/root:shadow sticky left-0 top-0 z-header bg-white transition-shadow shadow-transparent">
 
-  <div class="c-desk-head__wrap o-wrapper">
+  <div class="o-wrapper group-[.js-scrolled]/root:py-10 flex justify-between items-center py-16 transition-all">
 
-    <a class="c-desk-head__logo" href="<?= bloginfo('url'); ?>/#" title="トップへ戻る">
+    <a class="w-[12rem] group-[.js-scrolled]/root:w-[8rem] transition-all" href="<?= bloginfo('url'); ?>/#" title="トップへ戻る">
       <?php if (is_home()) : ?>
         <h1>
         <?php endif; ?>
@@ -30,9 +30,9 @@ endif;
       <?php endif; ?>
     </a>
 
-    <div class="c-desk-head__cont">
+    <div class="flex justify-between items-center">
 
-      <ul class="c-desk-head__nav">
+      <ul class="flex items-center">
         <?php get_template_part('src/parts/menus/nav-items'); ?>
       </ul>
 

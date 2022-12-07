@@ -444,7 +444,7 @@ button.swiper-pagination-bullet {
     font-size: 0.8em;
   }
 
-  /* Containers
+  /* Wrapper
   ----------------------------------------------- */
   .o-wrapper {
     width: 100%;
@@ -453,62 +453,6 @@ button.swiper-pagination-bullet {
     margin-right: auto;
     @apply pl-padding;
     @apply pr-padding;
-  }
-
-  /* Buttons
-  ----------------------------------------------- */
-  /* Media
-  ----------------------------------------------- */
-  /* Misc
-  ----------------------------------------------- */
-  /* Desktop Header
-  ----------------------------------------------- */
-  .c-desk-head {
-    position: sticky;
-    left: 0;
-    top: 0;
-    @apply z-header;
-    @apply bg-white;
-    @apply transition-shadow;
-    @apply shadow-transparent;
-  }
-  .js-scrolled .c-desk-head {
-    @apply shadow;
-  }
-  .c-desk-head__wrap,
-  .c-desk-head__cont {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .c-desk-head__wrap {
-    padding-top: 1.7rem;
-    padding-bottom: 1.7rem;
-    transition: padding 400ms ease;
-  }
-  .js-scrolled .c-desk-head__wrap {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-  .c-desk-head__logo {
-    width: 12rem;
-    transition: width 550ms ease;
-  }
-  .js-scrolled .c-desk-head__logo {
-    width: 8rem;
-  }
-  .c-desk-head__nav {
-    display: flex;
-    align-items: center;
-    list-style: none;
-  }
-  .c-desk-head__nav > li:not(:first-child) {
-    margin-left: 2em;
-  }
-  @media (max-width: 899px) {
-    .c-desk-head {
-      display: none;
-    }
   }
 
   /* Mobile Navigation
