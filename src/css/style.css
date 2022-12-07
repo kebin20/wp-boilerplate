@@ -447,110 +447,15 @@ button.swiper-pagination-bullet {
   /* Wrapper
   ----------------------------------------------- */
   .o-wrapper {
-    width: 100%;
+    @apply w-full;
     @apply max-w-content;
-    margin-left: auto;
-    margin-right: auto;
+    @apply mx-auto;
     @apply pl-padding;
     @apply pr-padding;
   }
 
-  /* Mobile Navigation
-  ----------------------------------------------- */
-  .c-mob-head {
-    position: sticky;
-    @apply z-header;
-    left: 0;
-    top: 0;
-    right: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 1.6rem;
-    padding-bottom: 1.6rem;
-    @apply px-padding;
-    @apply bg-white;
-    @apply transition-shadow;
-    @apply shadow-transparent;
-  }
-  .js-scrolled .c-mob-head {
-    @apply shadow;
-  }
-  .c-mob-head__logo {
-    width: 8rem;
-  }
-  .c-mob-head__wrap {
-    display: flex;
-    align-items: center;
-  }
-  .c-mob-head__ham {
-    width: 2.6rem;
-  }
-
-  .c-mob-navi {
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow-y: scroll;
-    padding-top: 2.8rem;
-    padding-bottom: 2.8rem;
-    @apply px-padding;
-    @apply text-white;
-    @apply bg-theme;
-    pointer-events: none;
-    visibility: hidden;
-    transform: scale(1.1);
-    opacity: 0;
-    @apply transition-all;
-  }
-  html.js-navi-open .c-mob-navi {
-    transform: scale(1);
-    opacity: 1;
-  }
-  html.js-navi-open .c-mob-navi,
-  html.js-navi-closing .c-mob-navi {
-    @apply z-mob-navi;
-    visibility: visible;
-    pointer-events: all;
-  }
-  .c-mob-navi__close {
-    position: absolute;
-    top: 2.8rem;
-    @apply right-padding;
-    padding: 0;
-    border: none;
-    font: inherit;
-    color: inherit;
-    background-color: transparent;
-  }
-  .c-mob-navi__close,
-  .c-mob-navi__close svg {
-    width: 1.8rem;
-    height: 1.8rem;
-  }
-  .c-mob-navi__wrap {
-    padding: 10.4rem 0 6rem;
-    overflow-y: scroll;
-  }
-  .c-mob-navi__nav {
-    list-style: none;
-    text-align: center;
-  }
-  .c-mob-navi__nav > li:not(:first-child) {
-    margin-top: 1em;
-  }
-
-  @media (min-width: 900px) {
-    .c-mob-head,
-    .c-mob-navi {
-      display: none;
-    }
-  }
-  /* Second Header
+  /**
+   * Second Header
    */
   /* Footer
   ----------------------------------------------- */

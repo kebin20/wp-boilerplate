@@ -14,7 +14,7 @@ It provides basic support for features I commonly use on my websites. Including 
 - Secondary page header with breadcrumbs and fallback/404 image
 - Post archive with pagination and fallback images for items
 - One custom post type (CPT) – called 'Blog' (ブログ in Japanese)
-- Fully accessible hamburger menu (`.c-mob-head` & `.c-mob-navi`)
+- Fully accessible hamburger menu (mobile only)
 - 404 page
 
 **Wordpress Plugins supported (_required_):**
