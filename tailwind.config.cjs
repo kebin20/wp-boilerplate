@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
+const TW_TYPO_STYLES = require("@tailwindcss/typography/src/styles");
+
 const plugin = require("tailwindcss/plugin");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
@@ -38,6 +40,7 @@ module.exports = {
     },
     fontWeight: {
       normal: 400,
+      bold: 700,
     },
     letterSpacing: {
       normal: "0",
@@ -95,6 +98,56 @@ module.exports = {
       2: 2,
       header: 1000,
       "mob-navi": 2000,
+    },
+
+    typography: (theme) => {
+      // Provides the default styling (`DEFAULT`) while also disabling modifiers (`prose-lg`, `prose-stone` etc.)
+
+      return {
+        DEFAULT: {
+          css: [
+            ...TW_TYPO_STYLES.DEFAULT.css,
+            {
+              // Base styles
+              fontSize: theme("fontSize.body")[0],
+              lineHeight: theme("fontSize.body")[1],
+              maxWidth: "100%",
+
+              "--tw-prose-body": theme("colors.grey"),
+              "--tw-prose-headings": theme("colors.grey"),
+              "--tw-prose-lead": theme("colors.grey"),
+              "--tw-prose-links": theme("colors.theme"),
+              "--tw-prose-bold": theme("colors.grey"),
+              "--tw-prose-counters": theme("colors.grey"),
+              "--tw-prose-bullets": theme("colors.grey"),
+              "--tw-prose-hr": theme("colors.black"),
+              "--tw-prose-quotes": theme("colors.grey"),
+              "--tw-prose-quote-borders": theme("colors.theme"),
+              "--tw-prose-captions": theme("colors.grey"),
+              "--tw-prose-code": theme("colors.theme"),
+              "--tw-prose-pre-code": theme("colors.white"),
+              "--tw-prose-pre-bg": theme("colors.black"),
+              "--tw-prose-th-borders": theme("colors.black"),
+              "--tw-prose-td-borders": theme("colors.grey"),
+
+              // Individual element styles
+              a: {
+                color: theme("colors.theme"),
+                fontWeight: theme("fontWeight.bold"),
+                textDecoration: "none",
+
+                "&:hover": {
+                  opacity: theme("opacity.50"),
+                },
+              },
+
+              em: {
+                fontStyle: "italic",
+              },
+            },
+          ],
+        },
+      };
     },
 
     extend: {

@@ -7,17 +7,30 @@
  */
 
 get_header();
-
-
-if (is_404()) :
 ?>
 
-  <div class="c-wrapper">
+
+<div class="c-wrapper">
+
+
+  <?php if (is_404()) : ?>
+
+
     <p class="c-empty-content">ページが見つかりませんでした。</p>
-  </div>
+
+
+  <?php else : ?>
+
+
+    <div class="py-40 prose">
+      <?= the_content(); ?>
+    </div>
+
+  <?php endif; ?>
+
+
+</div>
+
 
 <?php
-endif;
-
-
 get_footer();
