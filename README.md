@@ -3,7 +3,7 @@
 This is my custom Wordpress boilerplate for creating bespoke Wordpress themes.
 It provides basic support for features I commonly use on my websites. Including things like a contact form, customiseable content, a hamburger menu etc.
 
-- Uses BEM + ITCSS (BEMIT) to help eliminate namespacing issues
+- Uses Tailwind for styling
 - All assets in `/src/` are processed through Webpack and output into `/dist/`
 - The default language for this template is Japanese
 

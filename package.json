@@ -1,6 +1,7 @@
 {
   "name": "projectname",
   "type": "module",
+  "license": "MIT",
   "scripts": {
     "postbuild": "node webpack-post.js",
     "build": "webpack --mode production",

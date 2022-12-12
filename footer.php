@@ -12,7 +12,7 @@
 </main>
 
 
-<footer class="c-footer">
+<footer class="py-30 mt-40">
   <div class="c-wrapper prose">
     <p>Footer content</p>
     <ul>

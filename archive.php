@@ -14,7 +14,7 @@ get_header();
 
   <?php if (have_posts()) : ?>
 
-    <ul class="c-arch">
+    <ul class="grid gap-30 grid-cols-4">
 
       <?php
       while (have_posts()) :

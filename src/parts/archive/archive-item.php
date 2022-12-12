@@ -9,29 +9,29 @@
 ?>
 
 
-<li class="c-arch-item">
-  <a href="<?= get_the_permalink(); ?>">
+<li>
+  <a class="block" href="<?= get_the_permalink(); ?>">
+    <article>
+
+      <div>
+
+        <?php if (has_post_thumbnail()) : ?>
+          <img src="<?= get_the_post_thumbnail_url(get_the_ID(), "thumbnail"); ?>" alt="<?= get_the_title(); ?>">
+        <?php else : ?>
+          <img src="<?= get_template_directory_uri() ?>/dist/img/none-thumb.svg" alt="<?= get_the_title(); ?>">
+        <?php endif; ?>
+
+      </div>
 
 
-    <div class="c-arch-item__img">
+      <header>
 
-      <?php if (has_post_thumbnail()) : ?>
-        <img src="<?= get_the_post_thumbnail_url(get_the_ID(), "thumbnail"); ?>" alt="<?= get_the_title(); ?>">
-      <?php else : ?>
-        <img src="<?= get_template_directory_uri() ?>/dist/img/none-thumb.svg" alt="<?= get_the_title(); ?>">
-      <?php endif; ?>
+        <time datetime="<?= get_the_date("Y-m-d") ?>"><?= get_the_date("Y-m-d"); ?></time>
 
-    </div>
+        <p><?= get_the_title(); ?></p>
 
+      </header>
 
-    <div class="c-arch-item__cont">
-
-      <time class="c-arch-item__date" datetime="<?= get_the_date("Y-m-d") ?>"><?= get_the_date("Y-m-d"); ?></time>
-
-      <p class="c-arch-item__tit"><?= get_the_title(); ?></p>
-
-    </div>
-
-
+    </article>
   </a>
 </li>

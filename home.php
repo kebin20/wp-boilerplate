@@ -25,26 +25,29 @@ if ($hero_slider) :
 
     <?php if ($hero_is_slider) : ?>
 
-      <div class="t-home-hero__slider swiper">
+      <div class="[ swiper ] w-full h-screen">
+        <div class="[ swiper-wrapper ]">
 
-        <div class="swiper-wrapper">
           <?php foreach ($hero_slider as $image) : ?>
-            <div class="swiper-slide">
-              <img src="<?= $image["url"]; ?>" alt="<?= $image["caption"]; ?>">
+
+            <div class="[ swiper-slide ]">
+              <img class="w-full h-full object-cover" src="<?= $image["url"]; ?>" alt="<?= $image["caption"]; ?>">
             </div>
+
           <?php endforeach; ?>
+
         </div>
 
-        <!-- <div class="swiper-pagination"></div> -->
-        <!-- <div class="swiper-button-prev"></div> -->
-        <!-- <div class="swiper-button-next"></div> -->
+        <!-- <div class="[ swiper-pagination ]"></div> -->
+        <!-- <div class="[ swiper-button-prev ]"></div> -->
+        <!-- <div class="[ swiper-button-next ]"></div> -->
 
       </div>
 
     <?php else : ?>
 
-      <div class="t-home-hero__img">
-        <img src="<?= $hero_slider[0]["url"]; ?>" alt="<?= $hero_slider[0]["caption"]; ?>">
+      <div class="w-full h-screen">
+        <img class="w-full h-full object-cover" src="<?= $hero_slider[0]["url"]; ?>" alt="<?= $hero_slider[0]["caption"]; ?>">
       </div>
 
     <?php endif; ?>
@@ -56,7 +59,7 @@ if ($hero_slider) :
 <?php endif; ?>
 
 
-<!-- Home content goes here -->
+<!-- Rest of the Home content goes here -->
 
 
 <?php
