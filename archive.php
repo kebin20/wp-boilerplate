@@ -10,7 +10,7 @@ get_header();
 ?>
 
 
-<div class="o-wrapper">
+<div class="c-wrapper">
 
   <?php if (have_posts()) : ?>
 
@@ -31,7 +31,7 @@ get_header();
 
   <?php else : ?>
 
-    <p class="o-empty-content">投稿の内容が見つかりませんでした。</p>
+    <p class="c-empty-content">投稿の内容が見つかりませんでした。</p>
 
   <?php endif; ?>
 

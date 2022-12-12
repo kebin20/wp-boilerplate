@@ -431,16 +431,15 @@
 @layer components {
   /* Text
   ----------------------------------------------- */
-  .o-empty-content {
-    margin: 4rem 0;
-    text-align: center;
-    opacity: 0.7;
-    font-size: 0.8em;
+  .c-empty-content {
+    @apply my-40;
+    @apply text-center;
+    @apply opacity-50;
   }
 
   /* Wrapper
   ----------------------------------------------- */
-  .o-wrapper {
+  .c-wrapper {
     @apply w-full;
     @apply max-w-content;
     @apply mx-auto;

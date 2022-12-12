@@ -12,8 +12,8 @@ get_header();
 if (is_404()) :
 ?>
 
-  <div class="o-wrapper">
-    <p class="o-empty-content">ページが見つかりませんでした。</p>
+  <div class="c-wrapper">
+    <p class="c-empty-content">ページが見つかりませんでした。</p>
   </div>
 
 <?php

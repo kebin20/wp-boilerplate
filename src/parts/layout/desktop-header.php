@@ -16,7 +16,7 @@ endif;
 
 <header class="hidden md:block group-[.js-scrolled]/root:shadow sticky left-0 top-0 z-header bg-white transition-shadow shadow-transparent">
 
-  <div class="o-wrapper group-[.js-scrolled]/root:py-10 flex justify-between items-center py-16 transition-all">
+  <div class="c-wrapper group-[.js-scrolled]/root:py-10 flex justify-between items-center py-16 transition-all">
 
     <a class="w-[12rem] group-[.js-scrolled]/root:w-[8rem] transition-all" href="<?= bloginfo('url'); ?>/#" title="トップへ戻る">
       <?php if (is_home()) : ?>
