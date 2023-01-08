@@ -32,7 +32,7 @@ It provides basic support for features I commonly use on my websites. Including 
 
 - Yoast SEO
 
-  - Used for Breacrumbs
+  - Used for Breadcrumbs
 
 **Files queued by Wordpress:**
 
